@@ -9,15 +9,18 @@ export const Wrapper = styled.section`
   align-items: center;
 `;
 export const SelectView = styled.section`
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: 0 120px;
   gap: 20px;
   z-index: 999;
 `;
 
 export const SelectTitle = styled.article`
-  font-size: 34px;
+  width: 100%;
+  font-size: 38px;
   font-weight: bold;
 `;
 
@@ -25,7 +28,7 @@ export const SelectWrapper = styled.article`
   width: 300px;
   position: absolute;
   top: 125%;
-  left: 0;
+  left: 120px;
 `;
 
 export const Selected = styled.article`

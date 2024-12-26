@@ -1,4 +1,4 @@
-export interface Chefs {
+export interface ChefsClass {
   id: number;
   name: string;
   img: string;
@@ -16,7 +16,7 @@ export interface Chefs {
   };
 }
 
-export const whiteChefs: Chefs[] = [
+export const whiteChefs: ChefsClass[] = [
   {
     id: 1,
     name: "최현석",
@@ -311,7 +311,7 @@ export const whiteChefs: Chefs[] = [
   },
 ];
 
-export const blackChefs: Chefs[] = [
+export const blackChefs: ChefsClass[] = [
   {
     id: 1,
     name: "간귀",
@@ -440,7 +440,7 @@ export const blackChefs: Chefs[] = [
     name: "야키토리왕",
     img: "https://blog.kakaocdn.net/dn/b8Kiqz/btsJKLD5vd9/aGbq4sEfKQOJ42scBxRKI1/img.jpg",
     class: "흑수저",
-    career: "미슐랭 가이드 선정\n‘야키토리 묵’ 오너 셰프\n국내 야키토리 최강자",
+    career: "미슐랭 가이드 선정 ‘야키토리 묵’ 오너 셰프\n국내 야키토리 최강자",
     restaurants: {
       restaurantA: "야키토리 묵",
     },
@@ -466,7 +466,7 @@ export const blackChefs: Chefs[] = [
     name: "요리하는 돌아이",
     img: "https://www.nongaek.com/news/photo/202410/88429_38375_1810.png",
     class: "흑수저",
-    career: "본업을 시작하는 순간 돌아이가 된다! 현 다이닝바 ‘디핀’ 헤드 셰프",
+    career: "본업을 시작하는 순간 돌아이가 된다!\n현 다이닝바 ‘디핀’ 헤드 셰프",
     restaurants: {
       restaurantA: "디핀",
     },
@@ -494,7 +494,7 @@ export const blackChefs: Chefs[] = [
     img: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZCR5Q%2FbtsJRFdSdsK%2Fx7IrSDNOGhXzadw1gB7SB1%2Fimg.png",
     class: "흑수저",
     career:
-      "“이모카세”로 유명한 ‘즐거운 술상’과 경동시장 대표 맛집 ‘안동집 손칼국시’ 운영",
+      "“이모카세”로 유명한 ‘즐거운 술상’과 \n경동시장 대표 맛집 ‘안동집 손칼국시’ 운영",
     restaurants: {
       restaurantA: "즐거운술상",
       restaurantB: "안동집 손칼국시",
@@ -509,7 +509,7 @@ export const blackChefs: Chefs[] = [
     name: "장사천재 조사장",
     img: "https://blog.kakaocdn.net/dn/cqVG7F/btsJKKeid8Z/LKBu35xnLGkUhVMZDG83Sk/img.jpg",
     class: "흑수저",
-    career: "– 을지로의 숨겨진 보석! 한식 다이닝 ‘보석’ 운영",
+    career: "을지로의 숨겨진 보석! \n한식 다이닝 ‘보석’ 운영",
     restaurants: {
       restaurantA: "을지로보석",
     },
@@ -522,7 +522,7 @@ export const blackChefs: Chefs[] = [
     name: "중식여신",
     img: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbKDrri%2FbtsJSjVw9VS%2FEgm5J3zevedIMJ0TPa49K0%2Fimg.png",
     class: "흑수저",
-    career: "중식 대가 여경래 셰프의 수제자. 전 ‘홍보각’ 셰프",
+    career: "중식 대가 여경래 셰프의 수제자. \n전 ‘홍보각’ 셰프",
     restaurants: {
       restaurantA: "홍보각",
     },
@@ -536,7 +536,7 @@ export const blackChefs: Chefs[] = [
     img: "https://www.elle.co.kr/resources/online/online_image/2024/10/04/c68f04e3-5e1e-4f80-9d39-7faf59562df3.jpg",
     class: "흑수저",
     career:
-      "고등학교 1학년 철가방 배달부터 시작한 중식계의 강자. 현 ‘도량’ 오너 셰프",
+      "고등학교 1학년 철가방 배달부터 시작한 중식계의 강자. \n현 ‘도량’ 오너 셰프",
     restaurants: {
       restaurantA: "도량",
     },

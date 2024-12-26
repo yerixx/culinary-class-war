@@ -25,7 +25,7 @@ import "swiper/css/navigation";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-import { blackChefs, whiteChefs } from "./Chefs";
+import { blackChefs, whiteChefs } from "./ChefsClass";
 
 const Chefs = () => {
   const [selectedValue, setSelectedValue] = useState("백수저");
@@ -59,10 +59,7 @@ const Chefs = () => {
       <SelectView>
         <SelectTitle>흑백요리사</SelectTitle>
         <div>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus
-          dolorem ut quibusdam debitis nostrum quos officiis mollitia neque
-          corporis, et rerum placeat odit quisquam assumenda modi, fugit non
-          velit cupiditate?
+          흑백요리사들의 특별한 식당 이야기. 독창적인 요리를 직접 경험해보세요.
         </div>
         <SelectWrapper ref={selectRef}>
           <Selected onClick={() => handleSelect(selectedValue)}>
@@ -85,7 +82,6 @@ const Chefs = () => {
           navigation
           spaceBetween={20}
           pagination={{ clickable: true }}
-          // autoplay={{ delay: 5000 }}
         >
           {selectedValue === "백수저" &&
             whiteChefs.map((it) => (
@@ -110,7 +106,6 @@ const Chefs = () => {
                       <div>{it.addresses.addressC}</div>
                     </ChefsAddress>
                   </ChefsAddressView>
-                  {/* <ChefsMap>식당 보러가기</ChefsMap> */}
                 </WhiteChefsView>
               </SwiperSlide>
             ))}
@@ -137,7 +132,6 @@ const Chefs = () => {
                       <div>{it.addresses.addressC}</div>
                     </ChefsAddress>
                   </ChefsAddressView>
-                  {/* <ChefsMap>식당 보러가기</ChefsMap> */}
                 </WhiteChefsView>
               </SwiperSlide>
             ))}

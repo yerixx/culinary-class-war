@@ -25,17 +25,15 @@ const Panel: React.FC = () => {
       <PanelView>
         <PanelTitle>심사위원</PanelTitle>
         <div>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus
-          dolorem ut quibusdam debitis nostrum quos officiis mollitia neque
-          corporis, et rerum placeat odit quisquam assumenda modi, fugit non
-          velit cupiditate?
+          요리의 대가 두 명의 심사위원, 미슐랭 스타 경험과 창의적 미식을
+          선도하는 전문가들.
         </div>
       </PanelView>
       <SwiperView>
         <Swiper
           className="mySwiper"
           modules={[Pagination, Navigation, Autoplay]}
-          slidesPerView={1}
+          slidesPerView={2}
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000 }}
         >
@@ -46,7 +44,7 @@ const Panel: React.FC = () => {
                 <Name>{it.name}</Name>
                 <Birth>{it.birth}</Birth>
                 <Desc>{it.desc}</Desc>
-                <Desc>식당 보러가기</Desc>
+                {/* <Desc>식당 보러가기</Desc> */}
               </Text>
             </SwiperSlide>
           ))}
