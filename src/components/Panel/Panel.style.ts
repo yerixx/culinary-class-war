@@ -15,11 +15,11 @@ export const SwiperView = styled.section`
   .mySwiper {
     width: 100%;
     display: flex;
-    padding: 30px 0;
+    padding: 16px 0;
     .slide {
       display: flex;
       flex-direction: column;
-      padding-right: 50px;
+      padding-right: 16px;
     }
     .swiper-pagination {
       bottom: 0;
@@ -35,7 +35,7 @@ export const PanelView = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const PanelTitle = styled.article`
@@ -44,18 +44,58 @@ export const PanelTitle = styled.article`
 `;
 
 export const Text = styled.article`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
   padding: 20px;
+  transition: opacity 0.3s ease-in-out;
+`;
+export const ImgBox = styled.article`
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+  }
+  &:hover::before {
+    opacity: 1;
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  }
+
+  &:hover ${Text} {
+    opacity: 1;
+  }
 `;
 export const Img = styled.img`
   width: 100%;
-  height: 580px;
+  height: 600px;
   object-position: top;
   margin: 0 auto;
-  border-radius: 8px;
   object-fit: cover;
+`;
+export const Title = styled.h1`
+  width: 100%;
+  font-size: 16px;
+  font-weight: normal;
+  word-wrap: break-word;
+  white-space: break-spaces;
 `;
 export const Name = styled.h1`
   width: 100%;
@@ -65,7 +105,7 @@ export const Name = styled.h1`
 `;
 export const Birth = styled.p`
   width: 100%;
-  color: #999;
+  color: #d2d2d2;
   font-size: 15px;
   word-wrap: break-word;
   white-space: break-spaces;
@@ -73,7 +113,7 @@ export const Birth = styled.p`
 export const Desc = styled.p`
   width: 100%;
   font-size: 17px;
-  line-height: 170%;
+  line-height: 1.6;
   word-wrap: break-word;
   white-space: break-spaces;
   /* padding: 30px; */

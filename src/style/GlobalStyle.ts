@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   ul,li{
     list-style: none;
+    padding: 0;
   }
   body{
     background:#000;
@@ -47,4 +48,9 @@ export const Version = styled.div`
   bottom: 0;
   left: 0;
   ${body6}
+`;
+export const Wrapper = styled.main`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 `;

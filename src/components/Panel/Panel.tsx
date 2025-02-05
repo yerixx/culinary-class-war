@@ -2,11 +2,13 @@ import {
   Birth,
   Desc,
   Img,
+  ImgBox,
   Name,
   PanelTitle,
   PanelView,
   SwiperView,
   Text,
+  Title,
   Wrapper,
 } from "./Panel.style";
 import { Panels } from "./Panels";
@@ -39,13 +41,16 @@ const Panel: React.FC = () => {
         >
           {Panels.map((it, index) => (
             <SwiperSlide key={index} className="slide">
-              <Img src={it.img} />
-              <Text>
-                <Name>{it.name}</Name>
-                <Birth>{it.birth}</Birth>
-                <Desc>{it.desc}</Desc>
-                {/* <Desc>식당 보러가기</Desc> */}
-              </Text>
+              <ImgBox>
+                <Img src={it.img} />
+                <Text>
+                  <Title>{it.title}</Title>
+                  <Name>{it.name}</Name>
+                  <Birth>{it.birth}</Birth>
+                  <Desc>{it.desc}</Desc>
+                  {/* <Desc>식당 보러가기</Desc> */}
+                </Text>
+              </ImgBox>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -9,10 +9,20 @@ export interface ChefsClass {
     restaurantB?: string;
     restaurantC?: string;
   };
-  addresses: {
+  address: {
     addressA: string;
     addressB?: string;
     addressC?: string;
+  };
+  keyword: {
+    keywordA?: string;
+    keywordB?: string;
+    keywordC?: string;
+  };
+  mapId: {
+    mapIdA?: string;
+    mapIdB?: string;
+    mapIdC?: string;
   };
 }
 
@@ -26,13 +36,23 @@ export const whiteChefs: ChefsClass[] = [
       "라미드호텔직업전문학교 학과장 \n서울현대직업전문학교 전임교수 \n前 엘본 더 테이블총괄 셰프 \n前 쵸이닷 오너 셰프 \n주식회사일구공 셰프 / 비노스테이션 / 달리아 다이닝 / 중앙감속기 운영",
     restaurants: {
       restaurantA: "쵸이닷",
-      restaurantB: "달리아",
+      restaurantB: "달리아다이닝",
       restaurantC: "중앙감속기",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 강남구 도산대로 457 3층 ",
-      addressB: "달리아 다이닝 서울특별시 강남구 도산대로45길 14 2층",
+      addressB: "서울특별시 강남구 도산대로45길 14 2층",
       addressC: "서울특별시 성동구 성수일로6길 7-1 1층",
+    },
+    keyword: {
+      keywordA: "강남",
+      keywordB: "강남",
+      keywordC: "성수",
+    },
+    mapId: {
+      mapIdA: "1565367501",
+      mapIdB: "345398543",
+      mapIdC: "138978252",
     },
   },
   {
@@ -41,12 +61,18 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-c839fcdd-0eba-4d67-853b-2fd78e90fe5e.png",
     class: "백수저",
     career:
-      "2013년 마스터셰프 코리아 2 우승\n오마카세 일식 주점 식당네오 운영 중",
+      "2013년 마스터셰프 코리아 2 우승\n오마카세 일식 주점 식당네오 운영. 현재는 closed",
     restaurants: {
-      restaurantA: "식당네오",
+      restaurantA: "",
     },
-    addresses: {
-      addressA: "서울특별시 송파구 삼전로12길 4 101호",
+    address: {
+      addressA: "",
+    },
+    keyword: {
+      keywordA: "",
+    },
+    mapId: {
+      mapIdA: "",
     },
   },
   {
@@ -56,12 +82,20 @@ export const whiteChefs: ChefsClass[] = [
     class: "백수저",
     career: "한국 최초 여성 중식 스타 셰프!\n딤섬의 여왕 티엔미미 오너셰프",
     restaurants: {
-      restaurantA: "티엔미미 강남점",
-      restaurantB: "티엔미미 홍대점",
+      restaurantA: "티엔미미 강남",
+      restaurantB: "티엔미미 홍대",
     },
-    addresses: {
-      addressA: "서울특별시 서초구 사임당로 143 104-1~3호",
-      addressB: "서울특별시 서초구 사임당로 143 104-1~3호",
+    address: {
+      addressA: "서울 서초구 사임당로 143 Cross143 1층 104-1호",
+      addressB: "서울 마포구 양화로 144 머큐어 앰배서더 호텔 홍대 4층",
+    },
+    keyword: {
+      keywordA: "서초",
+      keywordB: "홍대",
+    },
+    mapId: {
+      mapIdA: "1124063279",
+      mapIdB: "1940227088",
     },
   },
   {
@@ -74,8 +108,14 @@ export const whiteChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "홍보각",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 강남구 봉은사로 130 노보텔 앰배서더 강남 LL층",
+    },
+    keyword: {
+      keywordA: "강남",
+    },
+    mapId: {
+      mapIdA: "735898829",
     },
   },
   {
@@ -84,12 +124,18 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-7974759d-afb4-4486-bc02-e99260240d51.png",
     class: "백수저",
     career:
-      "15년 연속 이탈리아 미슐랭 1스타 오너 셰프\n前 우송대학교 글로벌조리학과 교수\n前 세종대학교 컬리널리스쿨 강사\n現 충남도립 대학교 호텔조리제빵학과 교수\n이탈리아에서 15년간 미슐랭 원 스타를 유지한 Al Porticciolo 84를 \n운영하는 오너 셰프",
+      "15년 연속 이탈리아 미슐랭 1스타 오너 셰프\n前 우송대학교 글로벌조리학과 교수\n前 세종대학교 컬리널리스쿨 강사\n現 충남도립 대학교 호텔조리제빵학과 교수\n이탈리아에서 15년간 미슐랭 원 스타를 유지한 Al Porticciolo 84를 \n운영하는 오너 셰프",
     restaurants: {
       restaurantA: "파브리키친",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 용산구 한강대로15길 23-6 1층",
+    },
+    keyword: {
+      keywordA: "용산",
+    },
+    mapId: {
+      mapIdA: "1781966174",
     },
   },
   {
@@ -100,10 +146,16 @@ export const whiteChefs: ChefsClass[] = [
     career:
       "한식대첩2 최종 우승자 (충남팀)\n공주 갑사 인근 수정식당 40년 운영\n산채비빔밥, 닭도리탕, 각종 부침개, 백숙등을 전문으로 취급\n충남 부여에서 버섯 정식 전문 나경버섯농가 운영.",
     restaurants: {
-      restaurantA: "나경버섯",
+      restaurantA: "나경버섯농가",
     },
-    addresses: {
+    address: {
       addressA: "충청남도 부여군 석성면 비당로109번길 100 나경버섯농가",
+    },
+    keyword: {
+      keywordA: "충청남도",
+    },
+    mapId: {
+      mapIdA: "19277972",
     },
   },
   {
@@ -112,14 +164,18 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-e69ac754-3691-4308-ad30-8b89e131413b.png",
     class: "백수저",
     career:
-      "하이브리드 스타 셰프 세러데이브런치 대표\n백석문화대학교 외식산업학부 초빙교수\n친밀 오너셰프\n제주 오팬파이어 운영 ",
+      "하이브리드 스타 셰프 세러데이브런치 대표\n백석문화대학교 외식산업학부 초빙교수\n친밀 오너셰프\n제주 오팬파이어 운영 ",
     restaurants: {
-      restaurantA: "친밀 제주",
-      restaurantB: "오팬파이어 제주",
+      restaurantA: "오팬파이어",
     },
-    addresses: {
+    address: {
       addressA: "제주특별자치도 제주시 조천읍 남조로 1781 ",
-      addressB: "제주시 조천읍 남조로 1781 1층  ",
+    },
+    keyword: {
+      keywordA: "제주",
+    },
+    mapId: {
+      mapIdA: "534840856",
     },
   },
   {
@@ -132,22 +188,36 @@ export const whiteChefs: ChefsClass[] = [
       restaurantA: "윤서울",
       restaurantB: "면서울",
     },
-    addresses: {
-      addressA: "서울특별시 강남구 선릉로 805 1층",
-      addressB: "서울특별시 강남구 선릉로 805 1층",
+    address: {
+      addressA: "서울 강남구 선릉로 805 W빌딩 1층",
+      addressB: "서울 강남구 선릉로 805 W빌딩 1층",
+    },
+    keyword: {
+      keywordA: "강남",
+      keywordB: "강남",
+    },
+    mapId: {
+      mapIdA: "312810588",
+      mapIdB: "2114917980",
     },
   },
   {
     id: 9,
-    name: "조셉 리저우드 ",
+    name: "조셉 리저우드 ",
     img: "/src/assets/images/image-332e7686-7c7d-48ed-9158-bd99aff17d85.png",
     class: "백수저",
     career: "2020년, 2021 미쉐린 영 셰프 상\n에빗 셰프",
     restaurants: {
-      restaurantA: "에빗",
+      restaurantA: "에빗 EVETT",
     },
-    addresses: {
-      addressA: "서울특별시 강남구 도산대로45길 10-5 1층 EVETT",
+    address: {
+      addressA: "서울 강남구 도산대로45길 10-5 LS빌딩 1층 101호",
+    },
+    keyword: {
+      keywordA: "강남",
+    },
+    mapId: {
+      mapIdA: "384592680",
     },
   },
   {
@@ -159,8 +229,14 @@ export const whiteChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "진진",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 마포구 월드컵북로1길 60 1층 진진",
+    },
+    keyword: {
+      keywordA: "마포",
+    },
+    mapId: {
+      mapIdA: "1767349854",
     },
   },
   {
@@ -174,9 +250,17 @@ export const whiteChefs: ChefsClass[] = [
       restaurantA: "비채나",
       restaurantB: "깃든",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 송파구 올림픽로 300 롯데월드타워 81층",
       addressB: "서울특별시 강북구 월계로7나길 46-5 1층",
+    },
+    keyword: {
+      keywordA: "송파",
+      keywordB: "성북",
+    },
+    mapId: {
+      mapIdA: "18313843",
+      mapIdB: "1800902441",
     },
   },
   {
@@ -185,12 +269,18 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-a6ad05cc-09b9-4ad8-af52-efadce7a8eb0.png",
     class: "백수저",
     career:
-      "마스터셰프 코리아 1 준우승!\n기자(푸드 칼럼니스트)\n 2014 디저트 카페 ‘오쁘띠베르’ 운영\n2015 오그랑베르 운영\n2017년 오트뤼,알테르에고 운영\n2022년 오쁘띠베르 운영 중 ",
+      "마스터셰프 코리아 1 준우승!\n기자(푸드 칼럼니스트)\n 2014 디저트 카페 ‘오쁘띠베르’ 운영\n2015 오그랑베르 운영\n2017년 오트뤼,알테르에고 운영\n2022년 오쁘띠베르 운영 중 ",
     restaurants: {
       restaurantA: "오쁘띠베르",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 종로구 자하문로 47-1",
+    },
+    keyword: {
+      keywordA: "종로",
+    },
+    mapId: {
+      mapIdA: "1832182578",
     },
   },
   {
@@ -199,12 +289,18 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-901379a9-94a7-4338-a620-c84eec782a7c.png",
     class: "백수저",
     career:
-      "마스터셰프 코리아 1 우승자\n어드밴스드 퀴진  셰프 에이전시 소속\n애월 모리노아루요 운영",
+      "마스터셰프 코리아 1 우승자\n어드밴스드 퀴진  셰프 에이전시 소속\n애월 모리노아루요 운영",
     restaurants: {
       restaurantA: "모리노아루요",
     },
-    addresses: {
+    address: {
       addressA: "제주특별자치도 제주시 애월읍 하소로 769-58",
+    },
+    keyword: {
+      keywordA: "제주",
+    },
+    mapId: {
+      mapIdA: "27321409",
     },
   },
   {
@@ -217,8 +313,14 @@ export const whiteChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "터치더스카이",
     },
-    addresses: {
-      addressA: "서울특별시 영등포구 63로 50 한화금융센터_63",
+    address: {
+      addressA: "서울 영등포구 63로 50 63빌딩 58층",
+    },
+    keyword: {
+      keywordA: "영등포",
+    },
+    mapId: {
+      mapIdA: "11232276",
     },
   },
   {
@@ -230,8 +332,14 @@ export const whiteChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "",
     },
-    addresses: {
+    address: {
       addressA: "",
+    },
+    keyword: {
+      keywordA: "",
+    },
+    mapId: {
+      mapIdA: "",
     },
   },
   {
@@ -240,14 +348,22 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-2efa8130-ab88-432f-8309-5af22074b2e6.png",
     class: "백수저",
     career:
-      "국내 채소 요리 1인자!\n 어드밴스드 퀴진 소속\n강릉 그린볼, 로컬릿 오너셰프\n2023년 한국관광공사 주관 서울미식 100선 베스트 채식 레스토랑 선정",
+      "국내 채소 요리 1인자!\n 어드밴스드 퀴진 소속\n강릉 그린볼, 로컬릿 오너셰프\n2023년 한국관광공사 주관 서울미식 100선 베스트 채식 레스토랑 선정",
     restaurants: {
       restaurantA: "로컬릿",
       restaurantB: "그린볼",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 성동구 한림말길 33 2층",
       addressB: "강원특별자치도 강릉시 산양큰길22번길 30 1층 ",
+    },
+    keyword: {
+      keywordA: "중구",
+      keywordB: "강원도",
+    },
+    mapId: {
+      mapIdA: "412460362",
+      mapIdB: "279012480",
     },
   },
   {
@@ -256,12 +372,18 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-eb125875-4cf2-40b3-81b6-45dcbb829581.png",
     class: "백수저",
     career:
-      "대한민국 16대 조리 명장!\n가매, 광주옥1947, 장수나주곰탕 오너셰프\n한국 바다 셰프 협회 회장\n광주 가매일식,  대한민국 16대 조리 명장\n“밥알이 몇개고”주인공.",
+      "대한민국 16대 조리 명장!\n가매, 광주옥1947, 장수나주곰탕 오너셰프\n한국 바다 셰프 협회 회장\n광주 가매일식,  대한민국 16대 조리 명장\n“밥알이 몇개고”주인공.",
     restaurants: {
       restaurantA: "가매일식",
     },
-    addresses: {
+    address: {
       addressA: "광주광역시 서구 상무대로 1104-26 ",
+    },
+    keyword: {
+      keywordA: "광주",
+    },
+    mapId: {
+      mapIdA: "10115439",
     },
   },
   {
@@ -275,10 +397,20 @@ export const whiteChefs: ChefsClass[] = [
       restaurantB: "네기라이브",
       restaurantC: "네기다이닝라운지",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 강남구 논현로 854 지하1층",
       addressB: "서울특별시 성동구 성수이로 97 5층 일부",
       addressC: "서울특별시 강남구 도산대로15길 18 4층",
+    },
+    keyword: {
+      keywordA: "강남",
+      keywordB: "성수",
+      keywordC: "강남",
+    },
+    mapId: {
+      mapIdA: "1612273141",
+      mapIdB: "1427899355",
+      mapIdC: "544200314",
     },
   },
   {
@@ -287,12 +419,18 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-a8aded4e-b99d-4b5b-8422-da7ea5f194c9.png",
     class: "백수저",
     career:
-      "세계가 인정한 이북 요리 전문가!\n매니멀 트라이브(이사)\n리북방 마포(오너 쉐프)\n2024.05~ 벤디또 R&D 쉐프\n2022.08~ Hunnit R&D 쉐프\n2020.06~ 모터시티 R&D 쉐프",
+      "세계가 인정한 이북 요리 전문가!\n매니멀 트라이브(이사)\n리북방 마포(오너 쉐프)\n2024.05~ 벤디또 R&D 쉐프\n2022.08~ Hunnit R&D 쉐프\n2020.06~ 모터시티 R&D 쉐프",
     restaurants: {
       restaurantA: "리북방마포",
     },
-    addresses: {
-      addressA: "서울특별시 마포구 마포대로1길 16",
+    address: {
+      addressA: "서울 마포구 마포대로1길 16 A&D빌딩 2층",
+    },
+    keyword: {
+      keywordA: "마포",
+    },
+    mapId: {
+      mapIdA: "420523795",
     },
   },
   {
@@ -301,12 +439,18 @@ export const whiteChefs: ChefsClass[] = [
     img: "/src/assets/images/image-d75a3947-523a-4a4e-bf5b-4d478f13e65c.png",
     class: "백수저",
     career:
-      "2010 아이언 셰프 우승자! 미국의 스타 셰프\n작가\n2023년 4월 백악관에서 열리는 한미동맹 70주년 기념\n국빈 만찬의 셰프로 초청",
+      "2010 아이언 셰프 우승자! 미국의 스타 셰프\n작가\n2023년 4월 백악관에서 열리는 한미동맹 70주년 기념\n국빈 만찬의 셰프로 초청",
     restaurants: {
       restaurantA: "",
     },
-    addresses: {
+    address: {
       addressA: "",
+    },
+    keyword: {
+      keywordA: "",
+    },
+    mapId: {
+      mapIdA: "",
     },
   },
 ];
@@ -320,10 +464,16 @@ export const blackChefs: ChefsClass[] = [
     career:
       "간을 귀신같이 맞추는 미슐랭 2스타\n‘정식당’, ‘DOTZ’ 출신\n현 ‘키보 에다마메’ 오너 셰프",
     restaurants: {
-      restaurantA: "에다마메 남영",
+      restaurantA: "키보 에다마메",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 용산구 한강대로76길 11-40 1층",
+    },
+    keyword: {
+      keywordA: "용산",
+    },
+    mapId: {
+      mapIdA: "1441285389",
     },
   },
   {
@@ -336,8 +486,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "군몽",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 용산구 한남대로27가길 15 2층",
+    },
+    keyword: {
+      keywordA: "용산",
+    },
+    mapId: {
+      mapIdA: "539316041",
     },
   },
   {
@@ -349,8 +505,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "",
     },
-    addresses: {
+    address: {
       addressA: "",
+    },
+    keyword: {
+      keywordA: "",
+    },
+    mapId: {
+      mapIdA: "",
     },
   },
   {
@@ -361,10 +523,16 @@ export const blackChefs: ChefsClass[] = [
     career:
       "이탈리아 본토 느낌을 최대한 살린 핫한 생면 파스타바\n‘비아톨레도’ 오너 셰프",
     restaurants: {
-      restaurantA: "비아 톨레도 파스타바",
+      restaurantA: "비아톨레도 파스타바",
     },
-    addresses: {
-      addressA: "울특별시 용산구 원효로83길 7-2 1층",
+    address: {
+      addressA: "서울특별시 용산구 원효로83길 7-2 1층",
+    },
+    keyword: {
+      keywordA: "용산",
+    },
+    mapId: {
+      mapIdA: "1959097508",
     },
   },
   {
@@ -376,11 +544,15 @@ export const blackChefs: ChefsClass[] = [
       "만화책에서 영감을 얻어 요리를 시작한 비전공자\n현 ‘조광201’ 오너 셰프",
     restaurants: {
       restaurantA: "조광 101",
-      restaurantB: "조광 102",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 송파구 새말로10길 8",
-      addressB: "서울특별시 송파구 새말로8길 13 2층",
+    },
+    keyword: {
+      keywordA: "2138572501",
+    },
+    mapId: {
+      mapIdA: "string",
     },
   },
   {
@@ -392,8 +564,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "마마리마켓",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 성동구 연무장18길 16 1층",
+    },
+    keyword: {
+      keywordA: "성수",
+    },
+    mapId: {
+      mapIdA: "650958198",
     },
   },
   {
@@ -405,8 +583,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "",
     },
-    addresses: {
+    address: {
       addressA: "",
+    },
+    keyword: {
+      keywordA: "",
+    },
+    mapId: {
+      mapIdA: "string",
     },
   },
   {
@@ -418,8 +602,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "부토",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 용산구 한남대로27가길 32 B2층",
+    },
+    keyword: {
+      keywordA: "용산",
+    },
+    mapId: {
+      mapIdA: "1200072541",
     },
   },
   {
@@ -431,8 +621,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "",
     },
-    addresses: {
+    address: {
       addressA: "",
+    },
+    keyword: {
+      keywordA: "string",
+    },
+    mapId: {
+      mapIdA: "string",
     },
   },
   {
@@ -440,12 +636,18 @@ export const blackChefs: ChefsClass[] = [
     name: "야키토리왕",
     img: "https://blog.kakaocdn.net/dn/b8Kiqz/btsJKLD5vd9/aGbq4sEfKQOJ42scBxRKI1/img.jpg",
     class: "흑수저",
-    career: "미슐랭 가이드 선정 ‘야키토리 묵’ 오너 셰프\n국내 야키토리 최강자",
+    career: "미슐랭 가이드 선정 ‘야키토리묵’ 오너 셰프\n국내 야키토리 최강자",
     restaurants: {
-      restaurantA: "야키토리 묵",
+      restaurantA: "야키토리묵",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 마포구 성미산로 165-1 1층 우측",
+    },
+    keyword: {
+      keywordA: "마포",
+    },
+    mapId: {
+      mapIdA: "677911355",
     },
   },
   {
@@ -457,8 +659,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "남영탉",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 용산구 한강대로80길 12 1층",
+    },
+    keyword: {
+      keywordA: "용산",
+    },
+    mapId: {
+      mapIdA: "1645989615",
     },
   },
   {
@@ -469,9 +677,19 @@ export const blackChefs: ChefsClass[] = [
     career: "본업을 시작하는 순간 돌아이가 된다!\n현 다이닝바 ‘디핀’ 헤드 셰프",
     restaurants: {
       restaurantA: "디핀",
+      restaurantB: "디핀 옥수",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 중구 퇴계로 411 1층",
+      addressB: "서울 성동구 독서당로 194 지하 1층",
+    },
+    keyword: {
+      keywordA: "중구",
+      keywordB: "중구",
+    },
+    mapId: {
+      mapIdA: "1951275673",
+      mapIdB: "188922946",
     },
   },
   {
@@ -484,8 +702,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "본연",
     },
-    addresses: {
-      addressA: "서울특별시 강남구 논현로 742 7층",
+    address: {
+      addressA: "서울 강남구 논현로 742 파티오나인 7층",
+    },
+    keyword: {
+      keywordA: "강남",
+    },
+    mapId: {
+      mapIdA: "143050534",
     },
   },
   {
@@ -497,11 +721,19 @@ export const blackChefs: ChefsClass[] = [
       "“이모카세”로 유명한 ‘즐거운 술상’과 \n경동시장 대표 맛집 ‘안동집 손칼국시’ 운영",
     restaurants: {
       restaurantA: "즐거운술상",
-      restaurantB: "안동집 손칼국시",
+      restaurantB: "안동집",
     },
-    addresses: {
-      addressA: "서울특별시 도봉구 노해로 341 117호 창동, 신원리베르텔)",
+    address: {
+      addressA: "서울특별시 도봉구 노해로 341 117호 창동, 신원리베르텔",
       addressB: "서울특별시 동대문구 고산자로36길 3 신관 지하1층",
+    },
+    keyword: {
+      keywordA: "성북",
+      keywordB: "종로",
+    },
+    mapId: {
+      mapIdA: "1602362477",
+      mapIdB: "15629433",
     },
   },
   {
@@ -513,8 +745,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "을지로보석",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 중구 마른내로 11-10 3층",
+    },
+    keyword: {
+      keywordA: "중구",
+    },
+    mapId: {
+      mapIdA: "539686431",
     },
   },
   {
@@ -526,8 +764,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "홍보각",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 강남구 봉은사로 130 노보텔 앰배서더 강남 LL층 ",
+    },
+    keyword: {
+      keywordA: "강남",
+    },
+    mapId: {
+      mapIdA: "735898829",
     },
   },
   {
@@ -540,8 +784,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "도량",
     },
-    addresses: {
-      addressA: "서울특별시 종로구 자하문로6길 6 2, 3층",
+    address: {
+      addressA: "서울 종로구 자하문로6길 6 백송빌딩 2층",
+    },
+    keyword: {
+      keywordA: "종로",
+    },
+    mapId: {
+      mapIdA: "811744471",
     },
   },
   {
@@ -553,8 +803,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "나우 남영",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 용산구 원효로89길 23 2층",
+    },
+    keyword: {
+      keywordA: "용산",
+    },
+    mapId: {
+      mapIdA: "2082917786",
     },
   },
   {
@@ -567,8 +823,14 @@ export const blackChefs: ChefsClass[] = [
     restaurants: {
       restaurantA: "트리드",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 강남구 선릉로162길 16 2층",
+    },
+    keyword: {
+      keywordA: "강남",
+    },
+    mapId: {
+      mapIdA: "744607127",
     },
   },
   {
@@ -579,11 +841,19 @@ export const blackChefs: ChefsClass[] = [
     career: "‘사부 서울’ 총괄 셰프 출신이자 현 ‘포노 부오노’ 오너 셰프",
     restaurants: {
       restaurantA: "사브서울",
-      restaurantB: "포노 부오노",
+      restaurantB: "포노부오노",
     },
-    addresses: {
+    address: {
       addressA: "서울특별시 강남구 논현로175길 6 B1",
       addressB: "서울특별시 강남구 도산대로45길 8-7 2층",
+    },
+    keyword: {
+      keywordA: "강남",
+      keywordB: "강남",
+    },
+    mapId: {
+      mapIdA: "302504172",
+      mapIdB: "1414077027",
     },
   },
 ];

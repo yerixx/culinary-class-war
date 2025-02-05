@@ -1,4 +1,4 @@
-import Intro from "./Intro";
+import Intro from "./Intropage";
 
 const index = () => {
   return (

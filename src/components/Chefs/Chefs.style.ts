@@ -14,7 +14,7 @@ export const SelectView = styled.section`
   display: flex;
   flex-direction: column;
   padding: 0 120px;
-  gap: 20px;
+  gap: 10px;
   z-index: 999;
 `;
 
@@ -25,13 +25,15 @@ export const SelectTitle = styled.article`
 `;
 
 export const SelectWrapper = styled.article`
-  width: 300px;
+  width: 100%;
   position: absolute;
   top: 125%;
   left: 120px;
 `;
 
 export const Selected = styled.article`
+  position: relative;
+  width: 300px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -40,7 +42,7 @@ export const Selected = styled.article`
   cursor: pointer;
 `;
 export const SelectedOption = styled.ul`
-  width: 100%;
+  width: 300px;
   padding-inline-start: 0;
   li {
     position: relative;
@@ -69,23 +71,46 @@ export const SelectedOption = styled.ul`
   }
 `;
 
+export const SearchInput = styled.input`
+  position: absolute;
+  top: 0;
+  right: 180px;
+  width: 220px;
+  height: 40px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border: 1px solid #333;
+  background: none;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  color: #fff;
+  &::placeholder {
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  &:hover::placeholder {
+    opacity: 0;
+  }
+`;
+
 export const ChefsView = styled.section`
   width: 100%;
   height: 100vh;
   display: flex;
   padding-bottom: 0;
-  padding: 100px 60px 0px;
+  padding: 80px 60px 0px;
   .mySwiper {
     width: 100%;
     height: 76vh;
     padding: 0 60px;
     .slide {
       width: 100%;
-      height: 690px;
+      height: 100%;
       display: flex;
       justify-content: center;
       background: rgba(255, 255, 255, 0.1);
-      padding: 26px;
+      padding: 16px 18px;
       border-radius: 8px;
     }
     .swiper-button-prev,
@@ -106,7 +131,8 @@ export const ChefsView = styled.section`
       }
     }
     .swiper-pagination {
-      bottom: 0px;
+      display: none;
+      /* bottom: 0px; */
     }
     .swiper-pagination-bullet {
       scale: 1.2;
@@ -119,55 +145,83 @@ export const WhiteChefsImage = styled.img`
   border-radius: 4px;
 `;
 export const BlackChefsImage = styled.img`
-  width: 380px;
-  height: 260px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: 100%;
   border-radius: 4px;
   object-fit: cover;
   object-position: top;
 `;
 
 export const ChefsName = styled.article`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   font-size: 24px;
   span {
-    color: #999;
+    color: #d2d2d2;
+    font-size: 14px;
   }
 `;
 export const ChefsDesc = styled.article`
   width: 100%;
-  font-size: 16px;
-  line-height: 180%;
+  min-height: 130px;
+  overflow-y: scroll;
+  font-size: 14px;
+  line-height: 1.5;
   letter-spacing: -1px;
   word-wrap: break-word;
   white-space: break-spaces;
   color: #999;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #999;
 `;
-export const WhiteChefsView = styled.article`
+export const ChefsViewContainer = styled.article`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 `;
 export const ChefsAddressView = styled.article`
   display: flex;
   flex-direction: column;
+  height: 120px;
+  overflow-y: scroll;
   gap: 16px;
 `;
-export const ChefsAddress = styled.article`
+export const ChefsAddressMap = styled.article`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const ChefsAddress = styled.article`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   b {
-    font-size: 18px;
+    flex: 0.7;
+    font-size: 14px;
     color: #fff;
     transition: all 0.3s;
   }
   div {
+    flex: 2;
     color: #999;
+    font-size: 13px;
     transition: all 0.3s;
   }
-  &:hover b,
-  &:hover div {
-    color: #fff;
-  }
+`;
+
+export const MapIcon = styled.article`
+  flex: 0.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 `;
 export const ChefsMap = styled.article``;
