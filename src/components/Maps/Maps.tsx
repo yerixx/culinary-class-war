@@ -18,32 +18,6 @@ declare global {
   }
 }
 
-// const chefsData = [
-//   {
-//     id: 1,
-//     name: "셰프 A",
-//     addresses: {
-//       addressA: "서울 강남구 역삼동",
-//       addressB: "서울 강남구 삼성동",
-//     },
-//     address: {
-//       keyword: "강남",
-//       mapId: "1565367501",
-//     },
-//   },
-//   {
-//     id: 2,
-//     name: "셰프 B",
-//     addresses: {
-//       addressA: "서울 종로구 청진동",
-//       addressB: "서울 종로구 관철동",
-//     },
-//     address: {
-//       keyword: "종로",
-//       mapId: "21359554",
-//     },
-//   },
-// ];
 
 const addressList = [
   "강남",
