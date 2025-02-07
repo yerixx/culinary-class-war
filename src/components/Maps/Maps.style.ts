@@ -6,13 +6,14 @@ export const Wrapper = styled.section`
   padding: 30px 120px 60px;
   #map {
     width: 100%;
-    height: 490px;
+    height: 65vh;
     border-radius: 10px;
+    margin-bottom:10%;
   }
   .map_wrap {
     position: relative;
     width: 100%;
-    height: 500px; /* 지도 크기 조정 */
+    height: 100%; /* 지도 크기 조정 */
   }
   #menu_wrap {
     position: absolute;

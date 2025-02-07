@@ -13,13 +13,17 @@ export const SwiperView = styled.section`
   align-items: center;
   width: 100%;
   .mySwiper {
-    width: 100%;
     display: flex;
-    padding: 16px 0;
+    width: 100%;
+    height: 80vh;
+    padding: 32px 0px 0px;
     .slide {
       display: flex;
       flex-direction: column;
-      padding-right: 16px;
+      padding-right: 32px;
+      &:last-of-type{
+       padding-right: 0px;
+      }
     }
     .swiper-pagination {
       bottom: 0;
@@ -36,6 +40,7 @@ export const PanelView = styled.section`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  
 `;
 
 export const PanelTitle = styled.article`
@@ -57,7 +62,8 @@ export const Text = styled.article`
 export const ImgBox = styled.article`
   position: relative;
   width: 100%;
-  height: 600px;
+  height:100%;
+  // height: 600px;
   border-radius: 8px;
   overflow: hidden;
   &::before {
@@ -85,7 +91,8 @@ export const ImgBox = styled.article`
 `;
 export const Img = styled.img`
   width: 100%;
-  height: 600px;
+  height:100%;
+  // height: 600px;
   object-position: top;
   margin: 0 auto;
   object-fit: cover;
