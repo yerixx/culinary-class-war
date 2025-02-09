@@ -198,10 +198,7 @@ const Maps = () => {
         Object.entries(chef.keyword).some(([key, keyword]) => {
           if (keyword?.includes(selectedArea)) {
             const coordKey = `coords${key.slice(-1)}`;
-            return (
-              chef[coordKey as keyof typeof chef]?.lat &&
-              chef[coordKey as keyof typeof chef]?.lng
-            );
+            return (chef as any)[coordKey]?.lat && (chef as any)[coordKey]?.lng;
           }
           return false;
         })
