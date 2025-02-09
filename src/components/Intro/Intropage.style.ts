@@ -6,7 +6,7 @@ export const Wrapper = styled.main`
   height: 100vh;
   overflow: hidden;
   @media (max-width: 768px) {
-    height: 100%;
+    height: 60vh;
   }
 `;
 export const Video = styled.video`
@@ -14,7 +14,7 @@ export const Video = styled.video`
   height: 100vh;
   object-fit: cover;
   @media (max-width: 768px) {
-    object-fit: contain;
-    height: 100%;
+    object-fit: cover;
+    height: 60vh;
   }
 `;

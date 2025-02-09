@@ -9,6 +9,7 @@ export const Wrapper = styled.main`
   margin-bottom: 100px;
   @media (max-width: 768px) {
     padding: 20px;
+    height: auto;
   }
 `;
 export const SwiperView = styled.section`
@@ -20,6 +21,9 @@ export const SwiperView = styled.section`
     width: 100%;
     height: 80vh;
     padding: 32px 0px 0px;
+    @media (max-width: 768px) {
+      height: 60vh;
+    }
     .slide {
       display: flex;
       flex-direction: column;
