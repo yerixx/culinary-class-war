@@ -38,6 +38,7 @@ export const Wrapper = styled.section`
     }
     @media (max-width: 768px) {
       width: 240px;
+      height: 50vh;
     }
     #placesList {
       color: #000;
@@ -91,12 +92,19 @@ export const AddressList = styled.ul`
   font-size: 16px;
   flex-shrink: 0;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
   * {
     transition: all 0.3s;
     cursor: pointer;
     display: flex;
     padding: 10px 18px;
     border-radius: 12px;
+    @media (max-width: 768px) {
+      font-size: 13px;
+      padding: 8px;
+    }
   }
   .active {
     background: #333;
