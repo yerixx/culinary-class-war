@@ -38,7 +38,7 @@ export const Wrapper = styled.section`
     }
     @media (max-width: 768px) {
       width: 240px;
-      height: 80vh;
+      height: 70vh;
     }
     #placesList {
       color: #000;
@@ -125,7 +125,7 @@ export const AddressBottom = styled.section`
     display: flex;
     align-items: center;
     height: 40px;
-    top: 50%;
+    top: 40%;
     right: 0;
     z-index: 999;
     font-size: 24px;
