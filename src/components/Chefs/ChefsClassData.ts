@@ -19,6 +19,18 @@ export interface ChefsClass {
     keywordB?: string;
     keywordC?: string;
   };
+  coordsA?: {
+    lat?: string;
+    lng?: string;
+  };
+  coordsB?: {
+    lat?: string;
+    lng?: string;
+  };
+  coordsC?: {
+    lat?: string;
+    lng?: string;
+  };
   mapId: {
     mapIdA?: string;
     mapIdB?: string;
@@ -47,7 +59,19 @@ export const whiteChefs: ChefsClass[] = [
     keyword: {
       keywordA: "강남",
       keywordB: "강남",
-      keywordC: "성수",
+      keywordC: "건대/성수/왕십리",
+    },
+    coordsA: {
+      lat: "37.5244162",
+      lng: "127.0465576",
+    },
+    coordsB: {
+      lat: "37.5232387",
+      lng: "127.0358025",
+    },
+    coordsC: {
+      lat: "37.5455719",
+      lng: "127.0510934",
     },
     mapId: {
       mapIdA: "1565367501",
@@ -71,6 +95,10 @@ export const whiteChefs: ChefsClass[] = [
     keyword: {
       keywordA: "",
     },
+    coordsA: {
+      lat: undefined,
+      lng: undefined,
+    },
     mapId: {
       mapIdA: "",
     },
@@ -86,13 +114,22 @@ export const whiteChefs: ChefsClass[] = [
       restaurantB: "티엔미미 홍대",
     },
     address: {
-      addressA: "서울 서초구 사임당로 143 Cross143104-1호",
+      addressA: "서울 서초구 사임당로 143 Cross143 104-1호",
       addressB: "서울 마포구 양화로 144 머큐어 앰배서더 4층",
     },
     keyword: {
-      keywordA: "서초",
-      keywordB: "홍대",
+      keywordA: "강남",
+      keywordB: "홍대/합정/마포",
     },
+    coordsA: {
+      lat: "37.49185",
+      lng: "127.025198",
+    },
+    coordsB: {
+      lat: "37.5553209",
+      lng: "126.922401",
+    },
+
     mapId: {
       mapIdA: "1124063279",
       mapIdB: "1940227088",
@@ -114,6 +151,11 @@ export const whiteChefs: ChefsClass[] = [
     keyword: {
       keywordA: "강남",
     },
+    coordsA: {
+      lat: "37.5053029",
+      lng: "127.0288672",
+    },
+
     mapId: {
       mapIdA: "735898829",
     },
@@ -132,8 +174,13 @@ export const whiteChefs: ChefsClass[] = [
       addressA: "서울특별시 용산구 한강대로15길 23-6 1층",
     },
     keyword: {
-      keywordA: "용산",
+      keywordA: "용산/이태원/한남",
     },
+    coordsA: {
+      lat: "37.5261486",
+      lng: "126.9627509",
+    },
+
     mapId: {
       mapIdA: "1781966174",
     },
@@ -152,8 +199,13 @@ export const whiteChefs: ChefsClass[] = [
       addressA: "충청남도 부여군 석성면 비당로109번길 100",
     },
     keyword: {
-      keywordA: "충청남도",
+      keywordA: "충청",
     },
+    coordsA: {
+      lat: "36.2182303",
+      lng: "127.0061294",
+    },
+
     mapId: {
       mapIdA: "19277972",
     },
@@ -174,6 +226,11 @@ export const whiteChefs: ChefsClass[] = [
     keyword: {
       keywordA: "제주",
     },
+    coordsA: {
+      lat: "33.4287647",
+      lng: "126.6744441",
+    },
+
     mapId: {
       mapIdA: "534840856",
     },
@@ -196,6 +253,15 @@ export const whiteChefs: ChefsClass[] = [
       keywordA: "강남",
       keywordB: "강남",
     },
+    coordsA: {
+      lat: "37.5241239",
+      lng: "127.0390364",
+    },
+    coordsB: {
+      lat: "37.5241658",
+      lng: "127.0390675",
+    },
+
     mapId: {
       mapIdA: "312810588",
       mapIdB: "2114917980",
@@ -216,6 +282,11 @@ export const whiteChefs: ChefsClass[] = [
     keyword: {
       keywordA: "강남",
     },
+    coordsA: {
+      lat: "37.5233493",
+      lng: "127.0362087",
+    },
+
     mapId: {
       mapIdA: "384592680",
     },
@@ -233,8 +304,13 @@ export const whiteChefs: ChefsClass[] = [
       addressA: "서울특별시 마포구 월드컵북로1길 60 1층",
     },
     keyword: {
-      keywordA: "마포",
+      keywordA: "홍대/합정/마포",
     },
+    coordsA: {
+      lat: "37.5538",
+      lng: "126.918437",
+    },
+
     mapId: {
       mapIdA: "1767349854",
     },
@@ -255,9 +331,18 @@ export const whiteChefs: ChefsClass[] = [
       addressB: "서울특별시 강북구 월계로7나길 46-5 1층",
     },
     keyword: {
-      keywordA: "송파",
-      keywordB: "성북",
+      keywordA: "잠실/송파/강동",
+      keywordB: "성북/노원/중량",
     },
+    coordsA: {
+      lat: "37.5126072",
+      lng: "127.1025386",
+    },
+    coordsB: {
+      lat: "37.6132676",
+      lng: "127.0316579",
+    },
+
     mapId: {
       mapIdA: "18313843",
       mapIdB: "1800902441",
@@ -277,8 +362,13 @@ export const whiteChefs: ChefsClass[] = [
       addressA: "서울특별시 종로구 자하문로 47-1",
     },
     keyword: {
-      keywordA: "종로",
+      keywordA: "종로/중구",
     },
+    coordsA: {
+      lat: "37.5802195",
+      lng: "126.9709642",
+    },
+
     mapId: {
       mapIdA: "1832182578",
     },
@@ -299,6 +389,11 @@ export const whiteChefs: ChefsClass[] = [
     keyword: {
       keywordA: "제주",
     },
+    coordsA: {
+      lat: "33.4194165",
+      lng: "126.4018927",
+    },
+
     mapId: {
       mapIdA: "27321409",
     },
@@ -317,8 +412,13 @@ export const whiteChefs: ChefsClass[] = [
       addressA: "서울 영등포구 63로 50 63빌딩 58층",
     },
     keyword: {
-      keywordA: "영등포",
+      keywordA: "영등포/여의도/강서",
     },
+    coordsA: {
+      lat: "37.5198228",
+      lng: "126.9402224",
+    },
+
     mapId: {
       mapIdA: "11232276",
     },
@@ -337,6 +437,10 @@ export const whiteChefs: ChefsClass[] = [
     },
     keyword: {
       keywordA: "",
+    },
+    coordsA: {
+      lat: "",
+      lng: "",
     },
     mapId: {
       mapIdA: "",
@@ -358,9 +462,18 @@ export const whiteChefs: ChefsClass[] = [
       addressB: "강원특별자치도 강릉시 산양큰길22번길 30 1층 ",
     },
     keyword: {
-      keywordA: "중구",
-      keywordB: "강원도",
+      keywordA: "종로/중구",
+      keywordB: "강원",
     },
+    coordsA: {
+      lat: "37.5409203",
+      lng: "127.0147439",
+    },
+    coordsB: {
+      lat: "37.7787527",
+      lng: "128.9174777",
+    },
+
     mapId: {
       mapIdA: "412460362",
       mapIdB: "279012480",
@@ -382,6 +495,10 @@ export const whiteChefs: ChefsClass[] = [
     keyword: {
       keywordA: "광주",
     },
+    coordsA: {
+      lat: "35.1524988",
+      lng: "126.8838341",
+    },
     mapId: {
       mapIdA: "10115439",
     },
@@ -393,7 +510,7 @@ export const whiteChefs: ChefsClass[] = [
     class: "백수저",
     career: "현 미슐랭 1스타 오너 셰프!\n윤서울 운영 오너셰프\n면서울 운영",
     restaurants: {
-      restaurantA: "네기스키야키 압구정점",
+      restaurantA: "네기스키야키",
       restaurantB: "네기라이브",
       restaurantC: "네기다이닝라운지",
     },
@@ -404,8 +521,20 @@ export const whiteChefs: ChefsClass[] = [
     },
     keyword: {
       keywordA: "강남",
-      keywordB: "성수",
+      keywordB: "건대/성수/왕십리",
       keywordC: "강남",
+    },
+    coordsA: {
+      lat: "37.5253311",
+      lng: "127.0288828",
+    },
+    coordsB: {
+      lat: "37.5436226",
+      lng: "127.0565745",
+    },
+    coordsC: {
+      lat: "37.5195017",
+      lng: "127.0240624",
     },
     mapId: {
       mapIdA: "1612273141",
@@ -427,8 +556,13 @@ export const whiteChefs: ChefsClass[] = [
       addressA: "서울 마포구 마포대로1길 16 A&D빌딩 2층",
     },
     keyword: {
-      keywordA: "마포",
+      keywordA: "홍대/합정/마포",
     },
+    coordsA: {
+      lat: "37.5396867",
+      lng: "126.9431899",
+    },
+
     mapId: {
       mapIdA: "420523795",
     },
@@ -449,6 +583,11 @@ export const whiteChefs: ChefsClass[] = [
     keyword: {
       keywordA: "",
     },
+    coordsA: {
+      lat: "",
+      lng: "",
+    },
+
     mapId: {
       mapIdA: "",
     },
@@ -470,8 +609,13 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 용산구 한강대로76길 11-40 1층",
     },
     keyword: {
-      keywordA: "용산",
+      keywordA: "용산/이태원/한남",
     },
+    coordsA: {
+      lat: "37.5424357",
+      lng: "126.9737229",
+    },
+
     mapId: {
       mapIdA: "1441285389",
     },
@@ -490,8 +634,13 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 용산구 한남대로27가길 15 2층",
     },
     keyword: {
-      keywordA: "용산",
+      keywordA: "용산/이태원/한남",
     },
+    coordsA: {
+      lat: "37.5373596",
+      lng: "127.0028956",
+    },
+
     mapId: {
       mapIdA: "539316041",
     },
@@ -511,6 +660,10 @@ export const blackChefs: ChefsClass[] = [
     keyword: {
       keywordA: "",
     },
+    coordsA: {
+      lat: "",
+      lng: "",
+    },
     mapId: {
       mapIdA: "",
     },
@@ -529,7 +682,11 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 용산구 원효로83길 7-2 1층",
     },
     keyword: {
-      keywordA: "용산",
+      keywordA: "용산/이태원/한남",
+    },
+    coordsA: {
+      lat: "37.5400533",
+      lng: "126.9677589",
     },
     mapId: {
       mapIdA: "1959097508",
@@ -549,7 +706,11 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 송파구 새말로10길 8",
     },
     keyword: {
-      keywordA: "송파",
+      keywordA: "잠실/송파/강동",
+    },
+    coordsA: {
+      lat: "",
+      lng: "",
     },
     mapId: {
       mapIdA: "2138572501",
@@ -562,13 +723,17 @@ export const blackChefs: ChefsClass[] = [
     class: "흑수저",
     career: "스페인 미슐랭 출신의 핫한 반찬 외식 브랜드 ‘마마리마켓’ 오너셰프",
     restaurants: {
-      restaurantA: "마마리마켓",
+      restaurantA: "마마리마켓 (휴업중)",
     },
     address: {
       addressA: "서울특별시 성동구 연무장18길 16 1층",
     },
     keyword: {
-      keywordA: "성수",
+      keywordA: "건대/성수/왕십리",
+    },
+    coordsA: {
+      lat: "",
+      lng: "",
     },
     mapId: {
       mapIdA: "650958198",
@@ -589,6 +754,10 @@ export const blackChefs: ChefsClass[] = [
     keyword: {
       keywordA: "",
     },
+    coordsA: {
+      lat: "",
+      lng: "",
+    },
     mapId: {
       mapIdA: "",
     },
@@ -606,8 +775,13 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 용산구 한남대로27가길 32 B2층",
     },
     keyword: {
-      keywordA: "용산",
+      keywordA: "용산/이태원/한남",
     },
+    coordsA: {
+      lat: "37.5380894",
+      lng: "127.0025315",
+    },
+
     mapId: {
       mapIdA: "1200072541",
     },
@@ -627,6 +801,10 @@ export const blackChefs: ChefsClass[] = [
     keyword: {
       keywordA: "",
     },
+    coordsA: {
+      lat: "",
+      lng: "",
+    },
     mapId: {
       mapIdA: "",
     },
@@ -644,8 +822,13 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 마포구 성미산로 165-1 1층 우측",
     },
     keyword: {
-      keywordA: "마포",
+      keywordA: "홍대/합정/마포",
     },
+    coordsA: {
+      lat: "37.5646654",
+      lng: "126.9245756",
+    },
+
     mapId: {
       mapIdA: "677911355",
     },
@@ -663,8 +846,13 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 용산구 한강대로80길 12 1층",
     },
     keyword: {
-      keywordA: "용산",
+      keywordA: "용산/이태원/한남",
     },
+    coordsA: {
+      lat: "37.5425371",
+      lng: "126.9735146",
+    },
+
     mapId: {
       mapIdA: "1645989615",
     },
@@ -684,8 +872,16 @@ export const blackChefs: ChefsClass[] = [
       addressB: "서울 성동구 독서당로 194 지하 1층",
     },
     keyword: {
-      keywordA: "중구",
-      keywordB: "중구",
+      keywordA: "종로/중구",
+      keywordB: "종로/중구",
+    },
+    coordsA: {
+      lat: "37.5657562",
+      lng: "127.0171998",
+    },
+    coordsB: {
+      lat: "37.5426633",
+      lng: "127.0126699",
     },
     mapId: {
       mapIdA: "1951275673",
@@ -708,6 +904,10 @@ export const blackChefs: ChefsClass[] = [
     keyword: {
       keywordA: "강남",
     },
+    coordsA: {
+      lat: "37.5182365",
+      lng: "127.0292355",
+    },
     mapId: {
       mapIdA: "143050534",
     },
@@ -728,8 +928,16 @@ export const blackChefs: ChefsClass[] = [
       addressB: "서울특별시 동대문구 고산자로36길 3 신관 지하1층",
     },
     keyword: {
-      keywordA: "성북",
-      keywordB: "종로",
+      keywordA: "성북/노원/중량",
+      keywordB: "종로/중구",
+    },
+    coordsA: {
+      lat: "37.651489",
+      lng: "127.0458649",
+    },
+    coordsB: {
+      lat: "37.5175515",
+      lng: "127.1033943",
     },
     mapId: {
       mapIdA: "1602362477",
@@ -749,7 +957,11 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 중구 마른내로 11-10 3층",
     },
     keyword: {
-      keywordA: "중구",
+      keywordA: "종로/중구",
+    },
+    coordsA: {
+      lat: "37.5651271",
+      lng: "126.9892327",
     },
     mapId: {
       mapIdA: "539686431",
@@ -770,6 +982,10 @@ export const blackChefs: ChefsClass[] = [
     keyword: {
       keywordA: "강남",
     },
+    coordsA: {
+      lat: "37.5053029",
+      lng: "127.0288672",
+    },
     mapId: {
       mapIdA: "735898829",
     },
@@ -788,7 +1004,11 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울 종로구 자하문로6길 6 백송빌딩 2층",
     },
     keyword: {
-      keywordA: "종로",
+      keywordA: "종로/중구",
+    },
+    coordsA: {
+      lat: "37.5779717",
+      lng: "126.9725066",
     },
     mapId: {
       mapIdA: "811744471",
@@ -807,7 +1027,11 @@ export const blackChefs: ChefsClass[] = [
       addressA: "서울특별시 용산구 원효로89길 23 2층",
     },
     keyword: {
-      keywordA: "용산",
+      keywordA: "용산/이태원/한남",
+    },
+    coordsA: {
+      lat: "37.5406901",
+      lng: "126.9677265",
     },
     mapId: {
       mapIdA: "2082917786",
@@ -828,6 +1052,10 @@ export const blackChefs: ChefsClass[] = [
     },
     keyword: {
       keywordA: "강남",
+    },
+    coordsA: {
+      lat: "37.5266961",
+      lng: "127.0416829",
     },
     mapId: {
       mapIdA: "744607127",
@@ -851,6 +1079,15 @@ export const blackChefs: ChefsClass[] = [
       keywordA: "강남",
       keywordB: "강남",
     },
+    coordsA: {
+      lat: "37.526327",
+      lng: "127.0279079",
+    },
+    coordsB: {
+      lat: "37.5230466",
+      lng: "127.0364008",
+    },
+
     mapId: {
       mapIdA: "302504172",
       mapIdB: "1414077027",

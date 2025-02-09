@@ -8,25 +8,49 @@ export const Wrapper = styled.section`
     width: 100%;
     height: 65vh;
     border-radius: 10px;
-    margin-bottom:10%;
+    margin-bottom: 10%;
   }
   .map_wrap {
     position: relative;
     width: 100%;
-    height: 100%; /* 지도 크기 조정 */
+    height: 100%;
   }
   #menu_wrap {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* 지도보다 위에 배치 */
-    width: 250px;
-    height: 300px;
+    z-index: 10;
+    width: 300px;
+    height: 80vh;
     max-height: 460px;
+    overflow-y: scroll;
+    #placesList {
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      div {
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          background: rgba(255, 255, 255, 1);
+          transform: translateY(-2px);
+        }
+
+        strong {
+          font-size: 16px;
+        }
+      }
+    }
   }
 `;
 export const AddressTop = styled.section``;
@@ -76,4 +100,35 @@ export const AddressBottom = styled.section``;
 export const Maps = styled.article`
   font-size: 38px;
   padding-bottom: 30px;
+`;
+
+export const MenuWrap = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  margin: 10px 0 30px 10px;
+  padding: 5px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  font-size: 12px;
+  border-radius: 10px;
+  li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    p {
+      margin: 3px 0;
+      color: #666;
+    }
+  }
 `;

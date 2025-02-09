@@ -18,10 +18,9 @@ declare global {
   }
 }
 
-
 const addressList = [
+  "전체보기",
   "강남",
-  "서초",
   "잠실/송파/강동",
   "영등포/여의도/강서",
   "건대/성수/왕십리",
@@ -29,101 +28,183 @@ const addressList = [
   "홍대/합정/마포",
   "성북/노원/중량",
   "용산/이태원/한남",
-  "구로/관악/동작",
   "제주",
   "강원",
-  "충남/충북",
+  "충청",
   "광주",
 ];
 
 const Maps = () => {
   const mapRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isKakaoReady, setIsKakaoReady] = useState(false);
   const [map, setMap] = useState<any>(null);
   const [markers, setMarkers] = useState<any[]>([]);
 
   const chefsClassData = [...whiteChefs, ...blackChefs];
 
-  useEffect(() => {
-    const initializeMap = () => {
-      if (window.kakao && window.kakao.maps) {
-        const mapContainer = mapRef.current;
-        if (mapContainer) {
-          const options = {
-            center: new window.kakao.maps.LatLng(37.5665, 126.978), // 서울시청 중심
-            level: 7,
-          };
-          const newMap = new window.kakao.maps.Map(mapContainer, options);
-          setMap(newMap);
+  // 마커 제거 함수
+  const removeMarkers = () => {
+    markers.forEach((marker) => {
+      marker.setMap(null);
+    });
+    setMarkers([]); // 마커 상태 초기화
+  };
 
-          // Geocoder가 정상적으로 로드되었는지 확인하고 마커 추가
-          if (window.kakao.maps.services) {
-            addChefMarkers(newMap);
-          } else {
-            console.error("카카오 Geocoder 서비스가 로드되지 않았습니다.");
-          }
+  const addChefMarkers = (
+    map: any,
+    selectedChefs: any[],
+    keywordFilter?: string
+  ) => {
+    // 기존 마커 제거
+    removeMarkers();
+
+    const placesList = document.getElementById("placesList");
+    if (placesList) placesList.innerHTML = ""; // 기존 리스트 초기화
+
+    let hasVisibleItems = false;
+
+    selectedChefs.forEach((chef) => {
+      ["A", "B", "C"].forEach((key) => {
+        const coords = chef[`coords${key}`];
+        const keyword = chef.keyword[`keyword${key}`];
+        const restaurant = chef.restaurants[`restaurant${key}`];
+        const address = chef.address[`address${key}`] || "주소 정보 없음";
+        const mapId = chef.mapId[`mapId${key}`];
+
+        // 키워드 필터링 적용
+        if (
+          keywordFilter &&
+          keywordFilter !== "전체보기" &&
+          keyword !== keywordFilter
+        ) {
+          return; // 해당 키워드가 아닐 경우 이 루프 건너뜀
         }
-      } else {
-        console.error("카카오 지도 API가 로드되지 않았습니다.");
-      }
-    };
 
-    if (window.kakao && window.kakao.maps) {
-      initializeMap();
-    } else {
-      const script = document.createElement("script");
-      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${
-        import.meta.env.VITE_KAKAO_API_KEY
-      }&libraries=services`;
-      script.onload = initializeMap;
-      document.head.appendChild(script);
-    }
-  }, []);
+        if (coords?.lat && coords?.lng) {
+          const lat = parseFloat(coords.lat);
+          const lng = parseFloat(coords.lng);
+          const position = new window.kakao.maps.LatLng(lat, lng);
 
-  // 쉐프 데이터의 주소로 마커 추가하는 함수
-  const addChefMarkers = (map: any) => {
-    // Geocoder 객체가 로드되었는지 확인
-    if (!window.kakao || !window.kakao.maps.services) {
-      console.error("카카오 Geocoder 서비스가 로드되지 않았습니다.");
-      return;
-    }
+          // 마커 생성
+          const marker = new window.kakao.maps.Marker({
+            position,
+            map: map,
+          });
 
-    const geocoder = new window.kakao.maps.services.Geocoder();
+          const infowindow = new window.kakao.maps.InfoWindow({
+            content: `
+            <div style="width:180px;padding:5px;font-size:12px;color:#000;">
+              <strong>${restaurant || "식당 이름 없음"}</strong>
+              <br>${address}
+            </div>
+          `,
+          });
 
-    chefsClassData.forEach((chef) => {
-      // 쉐프 A, B의 두 주소에 대해 마커를 추가
-      Object.values(chef.addresses).forEach((address) => {
-        geocoder.addressSearch(address, (result: any, status: any) => {
-          if (status === window.kakao.maps.services.Status.OK) {
-            const coords = new window.kakao.maps.LatLng(
-              result[0].y,
-              result[0].x
-            );
-            const marker = new window.kakao.maps.Marker({
-              position: coords,
-              map: map,
+          // 마커 이벤트 추가
+          window.kakao.maps.event.addListener(marker, "mouseover", () =>
+            infowindow.open(map, marker)
+          );
+          window.kakao.maps.event.addListener(marker, "mouseout", () =>
+            infowindow.close()
+          );
+
+          // 마커 클릭 이벤트 추가
+          if (mapId) {
+            window.kakao.maps.event.addListener(marker, "click", () => {
+              window.open(
+                `https://place.map.kakao.com/${mapId}`,
+                "_blank",
+                "noopener,noreferrer"
+              );
             });
-
-            setMarkers((prevMarkers) => [...prevMarkers, marker]);
           }
-        });
+
+          setMarkers((prev) => [...prev, marker]);
+
+          // 첫 번째 마커일 경우 지도 중심 이동
+          if (selectedChefs.indexOf(chef) === 0) {
+            map.setCenter(position);
+          }
+
+          // 리스트 아이템 추가
+          hasVisibleItems = true;
+          const listItem = document.createElement("li");
+          listItem.innerHTML = `
+            <div class="list" style="cursor: pointer;">
+              <strong>${restaurant}</strong>
+              <br>${address}
+            </div>
+          `;
+
+          // 리스트 아이템 클릭 이벤트 추가
+          listItem.addEventListener("click", () => {
+            // 지도 중심을 해당 마커 위치로 이동
+            map.setCenter(position);
+            map.setLevel(4); // 줌 레벨을 더 가깝게 설정
+
+            // 해당 마커의 인포윈도우 표시
+            infowindow.open(map, marker);
+
+            // 3초 후 인포윈도우 닫기
+            setTimeout(() => {
+              infowindow.close();
+            }, 3000);
+          });
+
+          placesList?.appendChild(listItem);
+        }
       });
     });
+
+    // 필터링된 결과가 없을 경우 메시지 표시
+    if (!hasVisibleItems && keywordFilter && keywordFilter !== "전체보기") {
+      const noResultsItem = document.createElement("li");
+      noResultsItem.textContent = "해당 키워드에 맞는 식당이 없습니다.";
+      placesList?.appendChild(noResultsItem);
+    }
   };
 
   const handleActive = (index: number) => {
     setActiveIndex(index);
-    // 지도에 마커를 추가하기 전에 Geocoder가 준비되었는지 확인
-    if (window.kakao && window.kakao.maps) {
-      const geocoder = new window.kakao.maps.services.Geocoder();
-      const newMarkers: any[] = [];
 
+    if (window.kakao && window.kakao.maps) {
       const selectedArea = addressList[index];
+
+      // "전체보기" 선택 시 모든 레스토랑 표시
+      if (selectedArea === "전체보기") {
+        addChefMarkers(map, chefsClassData, "전체보기");
+        return;
+      }
+
+      const centerCoords = getCenterCoords(selectedArea);
+      if (!centerCoords) {
+        alert("해당 지역의 중심 좌표를 찾을 수 없습니다.");
+        return;
+      }
+
+      // 지도 중심 이동
+      map.setCenter(
+        new window.kakao.maps.LatLng(centerCoords.lat, centerCoords.lng)
+      );
+
+      // 지역에 따른 줌 레벨 조정
+      const zoomLevel = ["강원", "충청", "광주", "제주"].includes(selectedArea)
+        ? 11
+        : 7;
+      map.setLevel(zoomLevel);
+
+      // 선택된 지역의 쉐프 필터링
       const selectedChefs = chefsClassData.filter((chef) =>
-        Object.values(chef.addresses).some((address) =>
-          address.includes(selectedArea)
-        )
+        Object.entries(chef.keyword).some(([key, keyword]) => {
+          if (keyword?.includes(selectedArea)) {
+            const coordKey = `coords${key.slice(-1)}`;
+            return (
+              chef[coordKey as keyof typeof chef]?.lat &&
+              chef[coordKey as keyof typeof chef]?.lng
+            );
+          }
+          return false;
+        })
       );
 
       if (selectedChefs.length === 0) {
@@ -131,28 +212,30 @@ const Maps = () => {
         return;
       }
 
-      selectedChefs.forEach((chef: any) => {
-        const keyword = chef.address.keyword;
-        geocoder.addressSearch(keyword, (result: any, status: any) => {
-          if (status === window.kakao.maps.services.Status.OK) {
-            const coords = new window.kakao.maps.LatLng(
-              result[0].y,
-              result[0].x
-            );
-            const marker = new window.kakao.maps.Marker({
-              position: coords,
-              map: map,
-            });
-
-            newMarkers.push(marker);
-            setMarkers((prevMarkers) => [...prevMarkers, marker]);
-            map.setCenter(coords);
-          }
-        });
-      });
-    } else {
-      console.error("카카오 Geocoder 서비스가 로드되지 않았습니다.");
+      // 🌟 지도 중심 이동 후 마커 추가
+      addChefMarkers(map, selectedChefs, selectedArea);
     }
+  };
+
+  // 지역별 중심 좌표
+  const getCenterCoords = (area: string) => {
+    const centerPoints = {
+      강남: { lat: 37.5254876, lng: 127.0289201 },
+      서초: { lat: 37.4837121, lng: 127.0147614 },
+      "잠실/송파/강동": { lat: 37.5145937, lng: 127.1040291 },
+      "영등포/여의도/강서": { lat: 37.5263891, lng: 126.8959319 },
+      "건대/성수/왕십리": { lat: 37.5411491, lng: 127.0710771 },
+      "종로/중구": { lat: 37.5704164, lng: 126.9922121 },
+      "홍대/합정/마포": { lat: 37.5565592, lng: 126.9219356 },
+      "성북/노원/중량": { lat: 37.64, lng: 127.0375183 },
+      "용산/이태원/한남": { lat: 37.5384843, lng: 126.9899608 },
+      제주: { lat: 33.4996213, lng: 126.5311884 },
+      강원: { lat: 37.8228, lng: 128.1555 },
+      충청: { lat: 36.6372, lng: 127.4897 },
+      광주: { lat: 35.1595, lng: 126.8526 },
+    };
+
+    return centerPoints[area as keyof typeof centerPoints];
   };
 
   const handleLocation = () => {
@@ -184,66 +267,19 @@ const Maps = () => {
     }
   };
 
-  const removeMarkers = () => {
-    markers.forEach((marker) => marker.setMap(null));
-    setMarkers([]);
-  };
+  useEffect(() => {
+    if (mapRef.current && !map) {
+      const mapOptions = {
+        center: new window.kakao.maps.LatLng(37.5665, 126.978), // 기본 위치 서울
+        level: 9, // 줌 레벨
+      };
+      const kakaoMap = new window.kakao.maps.Map(mapRef.current, mapOptions);
+      setMap(kakaoMap);
 
-  const searchPlaces = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const keyword = (document.getElementById("keyword") as HTMLInputElement)
-      .value;
-    console.log("입력된 키워드:", keyword);
-
-    if (!keyword.trim()) {
-      alert("검색어를 입력하세요!");
-      return;
+      // 처음 마커 추가
+      addChefMarkers(kakaoMap, chefsClassData);
     }
-
-    if (!isKakaoReady) {
-      alert("카카오 맵이 로딩되지 않았습니다.");
-      return;
-    }
-
-    const ps = new window.kakao.maps.services.Places();
-
-    ps.keywordSearch(keyword, (data: any, status: any, pagination: any) => {
-      if (status === window.kakao.maps.services.Status.OK) {
-        const placesList = document.getElementById("placesList");
-        placesList!.innerHTML = "";
-
-        data.forEach((place: any) => {
-          const li = document.createElement("li");
-          li.textContent = place.place_name;
-          placesList!.appendChild(li);
-
-          const coords = new window.kakao.maps.LatLng(place.y, place.x);
-          const marker = new window.kakao.maps.Marker({
-            position: coords,
-            map: map,
-          });
-
-          setMarkers((prevMarkers) => [...prevMarkers, marker]);
-        });
-
-        const paginationDiv = document.getElementById("pagination");
-        paginationDiv!.innerHTML = "";
-
-        if (pagination) {
-          for (let i = 1; i <= pagination.last; i++) {
-            const pageButton = document.createElement("button");
-            pageButton.textContent = i.toString();
-            pageButton.onclick = () => {
-              pagination.gotoPage(i - 1);
-            };
-            paginationDiv!.appendChild(pageButton);
-          }
-        }
-      } else {
-        alert("검색 결과가 없습니다.");
-      }
-    });
-  };
+  }, [map, chefsClassData]);
 
   return (
     <Wrapper>
@@ -272,18 +308,6 @@ const Maps = () => {
         <div className="map_wrap">
           <div ref={mapRef} id="map"></div>
           <div id="menu_wrap" className="bg_white">
-            <div className="option">
-              <div>
-                <form>
-                  <input
-                    type="text"
-                    id="keyword"
-                    placeholder="지역을 입력하세요"
-                  />
-                  <button onClick={searchPlaces}>검색</button>
-                </form>
-              </div>
-            </div>
             <ul id="placesList"></ul>
             <div id="pagination"></div>
           </div>
