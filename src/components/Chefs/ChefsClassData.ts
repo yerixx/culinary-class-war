@@ -86,8 +86,8 @@ export const whiteChefs: ChefsClass[] = [
       restaurantB: "티엔미미 홍대",
     },
     address: {
-      addressA: "서울 서초구 사임당로 143 Cross143 1층 104-1호",
-      addressB: "서울 마포구 양화로 144 머큐어 앰배서더 호텔 홍대 4층",
+      addressA: "서울 서초구 사임당로 143 Cross143104-1호",
+      addressB: "서울 마포구 양화로 144 머큐어 앰배서더 4층",
     },
     keyword: {
       keywordA: "서초",
@@ -149,7 +149,7 @@ export const whiteChefs: ChefsClass[] = [
       restaurantA: "나경버섯농가",
     },
     address: {
-      addressA: "충청남도 부여군 석성면 비당로109번길 100 나경버섯농가",
+      addressA: "충청남도 부여군 석성면 비당로109번길 100",
     },
     keyword: {
       keywordA: "충청남도",
@@ -169,7 +169,7 @@ export const whiteChefs: ChefsClass[] = [
       restaurantA: "오팬파이어",
     },
     address: {
-      addressA: "제주특별자치도 제주시 조천읍 남조로 1781 ",
+      addressA: "제주특별자치도 제주시 조천읍 남조로 1781",
     },
     keyword: {
       keywordA: "제주",
@@ -211,7 +211,7 @@ export const whiteChefs: ChefsClass[] = [
       restaurantA: "에빗 EVETT",
     },
     address: {
-      addressA: "서울 강남구 도산대로45길 10-5 LS빌딩 1층 101호",
+      addressA: "서울 강남구 도산대로45길 10-5 LS빌딩 101호",
     },
     keyword: {
       keywordA: "강남",
@@ -230,7 +230,7 @@ export const whiteChefs: ChefsClass[] = [
       restaurantA: "진진",
     },
     address: {
-      addressA: "서울특별시 마포구 월드컵북로1길 60 1층 진진",
+      addressA: "서울특별시 마포구 월드컵북로1길 60 1층",
     },
     keyword: {
       keywordA: "마포",
@@ -399,7 +399,7 @@ export const whiteChefs: ChefsClass[] = [
     },
     address: {
       addressA: "서울특별시 강남구 논현로 854 지하1층",
-      addressB: "서울특별시 성동구 성수이로 97 5층 일부",
+      addressB: "서울특별시 성동구 성수이로 97 5층",
       addressC: "서울특별시 강남구 도산대로15길 18 4층",
     },
     keyword: {
@@ -543,16 +543,16 @@ export const blackChefs: ChefsClass[] = [
     career:
       "만화책에서 영감을 얻어 요리를 시작한 비전공자\n현 ‘조광201’ 오너 셰프",
     restaurants: {
-      restaurantA: "조광 101",
+      restaurantA: "조광 101(휴업중)",
     },
     address: {
       addressA: "서울특별시 송파구 새말로10길 8",
     },
     keyword: {
-      keywordA: "2138572501",
+      keywordA: "송파",
     },
     mapId: {
-      mapIdA: "string",
+      mapIdA: "2138572501",
     },
   },
   {
@@ -590,7 +590,7 @@ export const blackChefs: ChefsClass[] = [
       keywordA: "",
     },
     mapId: {
-      mapIdA: "string",
+      mapIdA: "",
     },
   },
   {
@@ -625,10 +625,10 @@ export const blackChefs: ChefsClass[] = [
       addressA: "",
     },
     keyword: {
-      keywordA: "string",
+      keywordA: "",
     },
     mapId: {
-      mapIdA: "string",
+      mapIdA: "",
     },
   },
   {
