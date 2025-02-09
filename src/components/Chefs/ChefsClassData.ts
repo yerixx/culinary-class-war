@@ -42,7 +42,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 1,
     name: "최현석",
-    img: "/src/assets/images/image-b60132c7-be2f-4f09-b1af-7546d75fa222.png",
+    img: "/images/image-b60132c7-be2f-4f09-b1af-7546d75fa222.png",
     class: "백수저",
     career:
       "라미드호텔직업전문학교 학과장 \n서울현대직업전문학교 전임교수 \n前 엘본 더 테이블총괄 셰프 \n前 쵸이닷 오너 셰프 \n주식회사일구공 셰프 / 비노스테이션 / 달리아 다이닝 / 중앙감속기 운영",
@@ -82,7 +82,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 2,
     name: "최강록",
-    img: "/src/assets/images/image-c839fcdd-0eba-4d67-853b-2fd78e90fe5e.png",
+    img: "/images/image-c839fcdd-0eba-4d67-853b-2fd78e90fe5e.png",
     class: "백수저",
     career:
       "2013년 마스터셰프 코리아 2 우승\n오마카세 일식 주점 식당네오 운영. 현재는 closed",
@@ -106,7 +106,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 3,
     name: "정지선",
-    img: "/src/assets/images/image-63abde99-cd66-4ce5-8b10-09a4f3f02ccf.png",
+    img: "/images/image-63abde99-cd66-4ce5-8b10-09a4f3f02ccf.png",
     class: "백수저",
     career: "한국 최초 여성 중식 스타 셰프!\n딤섬의 여왕 티엔미미 오너셰프",
     restaurants: {
@@ -138,7 +138,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 4,
     name: "여경래",
-    img: "/src/assets/images/image-813e0074-a1c4-421f-af1b-1991096bc678.png",
+    img: "/images/image-813e0074-a1c4-421f-af1b-1991096bc678.png",
     class: "백수저",
     career:
       "중식 그랜드 마스터 홍보각 총괄오너세프\n경기대학교 관광교육권 교수\n세계 중국요리협회 부회장 겸 한국 중식연맹회장",
@@ -163,7 +163,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 5,
     name: "파브리",
-    img: "/src/assets/images/image-7974759d-afb4-4486-bc02-e99260240d51.png",
+    img: "/images/image-7974759d-afb4-4486-bc02-e99260240d51.png",
     class: "백수저",
     career:
       "15년 연속 이탈리아 미슐랭 1스타 오너 셰프\n前 우송대학교 글로벌조리학과 교수\n前 세종대학교 컬리널리스쿨 강사\n現 충남도립 대학교 호텔조리제빵학과 교수\n이탈리아에서 15년간 미슐랭 원 스타를 유지한 Al Porticciolo 84를 \n운영하는 오너 셰프",
@@ -188,7 +188,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 6,
     name: "이영숙",
-    img: "/src/assets/images/image-bf793077-0961-4a11-aec9-f680021cb143.png",
+    img: "/images/image-bf793077-0961-4a11-aec9-f680021cb143.png",
     class: "백수저",
     career:
       "한식대첩2 최종 우승자 (충남팀)\n공주 갑사 인근 수정식당 40년 운영\n산채비빔밥, 닭도리탕, 각종 부침개, 백숙등을 전문으로 취급\n충남 부여에서 버섯 정식 전문 나경버섯농가 운영.",
@@ -213,7 +213,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 7,
     name: "오세득",
-    img: "/src/assets/images/image-e69ac754-3691-4308-ad30-8b89e131413b.png",
+    img: "/images/image-e69ac754-3691-4308-ad30-8b89e131413b.png",
     class: "백수저",
     career:
       "하이브리드 스타 셰프 세러데이브런치 대표\n백석문화대학교 외식산업학부 초빙교수\n친밀 오너셰프\n제주 오팬파이어 운영 ",
@@ -238,7 +238,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 8,
     name: "김도윤",
-    img: "/src/assets/images/image-3a0e001c-ca6a-4e68-98eb-21415bf0841f.png",
+    img: "/images/image-3a0e001c-ca6a-4e68-98eb-21415bf0841f.png",
     class: "백수저",
     career: "현 미슐랭 1스타 오너 셰프!\n윤서울 운영 오너셰프\n면서울 운영",
     restaurants: {
@@ -270,7 +270,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 9,
     name: "조셉 리저우드 ",
-    img: "/src/assets/images/image-332e7686-7c7d-48ed-9158-bd99aff17d85.png",
+    img: "/images/image-332e7686-7c7d-48ed-9158-bd99aff17d85.png",
     class: "백수저",
     career: "2020년, 2021 미쉐린 영 셰프 상\n에빗 셰프",
     restaurants: {
@@ -294,7 +294,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 10,
     name: "황진선",
-    img: "/src/assets/images/image-4987e11d-9308-4a9a-b9cd-a43c09c9d502.png",
+    img: "/images/image-4987e11d-9308-4a9a-b9cd-a43c09c9d502.png",
     class: "백수저",
     career: "2017-2019 미슐랭 1스타 오너 셰프!\n진진 오너셰프",
     restaurants: {
@@ -318,7 +318,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 11,
     name: "방기수",
-    img: "/src/assets/images/image-8a42faad-9b0b-4ae8-8433-8058f09fe77f.png",
+    img: "/images/image-8a42faad-9b0b-4ae8-8433-8058f09fe77f.png",
     class: "백수저",
     career:
       "국내 첫 미슐랭 1스타 前 총괄 셰프!\n2014~ 2018 비채나 총괄 셰프\n2018~ 깃든 조리 사장",
@@ -351,7 +351,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 12,
     name: "박준우",
-    img: "/src/assets/images/image-a6ad05cc-09b9-4ad8-af52-efadce7a8eb0.png",
+    img: "/images/image-a6ad05cc-09b9-4ad8-af52-efadce7a8eb0.png",
     class: "백수저",
     career:
       "마스터셰프 코리아 1 준우승!\n기자(푸드 칼럼니스트)\n 2014 디저트 카페 ‘오쁘띠베르’ 운영\n2015 오그랑베르 운영\n2017년 오트뤼,알테르에고 운영\n2022년 오쁘띠베르 운영 중 ",
@@ -376,7 +376,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 13,
     name: "김승민",
-    img: "/src/assets/images/image-901379a9-94a7-4338-a620-c84eec782a7c.png",
+    img: "/images/image-901379a9-94a7-4338-a620-c84eec782a7c.png",
     class: "백수저",
     career:
       "마스터셰프 코리아 1 우승자\n어드밴스드 퀴진  셰프 에이전시 소속\n애월 모리노아루요 운영",
@@ -401,7 +401,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 14,
     name: "조은주",
-    img: "/src/assets/images/image-0be50ff4-43df-439e-8e66-591a7a64d659.png",
+    img: "/images/image-0be50ff4-43df-439e-8e66-591a7a64d659.png",
     class: "백수저",
     career:
       "세계 3대 요리 대회 2관왕\n63스퀘어 터치더스카이 총괄 셰프\n세계 3대 요리대회 여성 최초 2관왕\n2018년 평창 동계 올림픽 성황 봉송자",
@@ -426,7 +426,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 15,
     name: "선경 롱기스트 ",
-    img: "/src/assets/images/image-8e50a34d-ad8e-4110-8981-35a83162fee6.png",
+    img: "/images/image-8e50a34d-ad8e-4110-8981-35a83162fee6.png",
     class: "백수저",
     career: "레스토랑 익스프레스 우승자!\n유튜버",
     restaurants: {
@@ -449,7 +449,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 16,
     name: "남정석 ",
-    img: "/src/assets/images/image-2efa8130-ab88-432f-8309-5af22074b2e6.png",
+    img: "/images/image-2efa8130-ab88-432f-8309-5af22074b2e6.png",
     class: "백수저",
     career:
       "국내 채소 요리 1인자!\n 어드밴스드 퀴진 소속\n강릉 그린볼, 로컬릿 오너셰프\n2023년 한국관광공사 주관 서울미식 100선 베스트 채식 레스토랑 선정",
@@ -482,7 +482,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 17,
     name: "안유성",
-    img: "/src/assets/images/image-eb125875-4cf2-40b3-81b6-45dcbb829581.png",
+    img: "/images/image-eb125875-4cf2-40b3-81b6-45dcbb829581.png",
     class: "백수저",
     career:
       "대한민국 16대 조리 명장!\n가매, 광주옥1947, 장수나주곰탕 오너셰프\n한국 바다 셰프 협회 회장\n광주 가매일식,  대한민국 16대 조리 명장\n“밥알이 몇개고”주인공.",
@@ -506,7 +506,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 18,
     name: "장호준",
-    img: "/src/assets/images/image-d1d04a01-a74b-49e4-91ab-885362a80b4c.png",
+    img: "/images/image-d1d04a01-a74b-49e4-91ab-885362a80b4c.png",
     class: "백수저",
     career: "현 미슐랭 1스타 오너 셰프!\n윤서울 운영 오너셰프\n면서울 운영",
     restaurants: {
@@ -545,7 +545,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 19,
     name: "최지형",
-    img: "/src/assets/images/image-a8aded4e-b99d-4b5b-8422-da7ea5f194c9.png",
+    img: "/images/image-a8aded4e-b99d-4b5b-8422-da7ea5f194c9.png",
     class: "백수저",
     career:
       "세계가 인정한 이북 요리 전문가!\n매니멀 트라이브(이사)\n리북방 마포(오너 쉐프)\n2024.05~ 벤디또 R&D 쉐프\n2022.08~ Hunnit R&D 쉐프\n2020.06~ 모터시티 R&D 쉐프",
@@ -570,7 +570,7 @@ export const whiteChefs: ChefsClass[] = [
   {
     id: 20,
     name: "에드워드 리",
-    img: "/src/assets/images/image-d75a3947-523a-4a4e-bf5b-4d478f13e65c.png",
+    img: "/images/image-d75a3947-523a-4a4e-bf5b-4d478f13e65c.png",
     class: "백수저",
     career:
       "2010 아이언 셰프 우승자! 미국의 스타 셰프\n작가\n2023년 4월 백악관에서 열리는 한미동맹 70주년 기념\n국빈 만찬의 셰프로 초청",

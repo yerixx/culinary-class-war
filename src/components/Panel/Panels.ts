@@ -10,7 +10,7 @@ export interface panel {
 export const Panels: panel[] = [
   {
     id: 1,
-    img: "/src/assets/images/panel1.png",
+    img: "images/panel1.png",
     title: "외식업계의 왕",
     name: "백종원 [白種元]",
     birth: "1966년 9월 4일 충청남도 대전시",
@@ -18,7 +18,7 @@ export const Panels: panel[] = [
   },
   {
     id: 2,
-    img: "/src/assets/images/panel2.png",
+    img: "images/panel2.png",
     title: "셰프들의 꿈",
     name: "안성재 [Anh Sung-jae]",
     birth:

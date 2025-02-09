@@ -39,6 +39,7 @@ const Maps = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [map, setMap] = useState<any>(null);
   const [markers, setMarkers] = useState<any[]>([]);
+  const [myLocationOverlay, setMyLocationOverlay] = useState<any>(null);
 
   const chefsClassData = [...whiteChefs, ...blackChefs];
 
@@ -47,7 +48,12 @@ const Maps = () => {
     markers.forEach((marker) => {
       marker.setMap(null);
     });
-    setMarkers([]); // 마커 상태 초기화
+    setMarkers([]);
+
+    // 내 위치 오버레이는 유지
+    if (myLocationOverlay) {
+      myLocationOverlay.setMap(map);
+    }
   };
 
   const addChefMarkers = (
@@ -234,7 +240,6 @@ const Maps = () => {
 
     return centerPoints[area as keyof typeof centerPoints];
   };
-
   const handleLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -246,14 +251,36 @@ const Maps = () => {
             const moveLatLon = new window.kakao.maps.LatLng(lat, lng);
             map.setCenter(moveLatLon);
 
-            // 기존 마커 삭제 후 새 마커 추가
-            removeMarkers();
-
             const marker = new window.kakao.maps.Marker({
               position: moveLatLon,
             });
             marker.setMap(map);
 
+            // 기존 내 위치 오버레이 제거
+            if (myLocationOverlay) {
+              myLocationOverlay.setMap(null);
+            }
+
+            // CustomOverlay 생성
+            const content = document.createElement("div");
+            content.className = "customoverlay";
+            content.innerHTML = `
+              <div style="padding: 5px 10px; color:#000;background: white; border: 1px solid #333; font-size:12px;">
+                내 위치
+              </div>
+            `;
+
+            const customOverlay = new window.kakao.maps.CustomOverlay({
+              position: moveLatLon,
+              content: content,
+              yAnchor: 2.5,
+            });
+
+            // 커스텀 오버레이를 지도에 표시
+            customOverlay.setMap(map);
+
+            // 오버레이 상태 저장
+            setMyLocationOverlay(customOverlay);
             setMarkers([marker]);
           }
         },
