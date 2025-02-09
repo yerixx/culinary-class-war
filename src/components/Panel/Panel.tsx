@@ -35,7 +35,12 @@ const Panel: React.FC = () => {
         <Swiper
           className="mySwiper"
           modules={[Pagination, Navigation, Autoplay]}
-          slidesPerView={2}
+          slidesPerView={1.1}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+          }}
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000 }}
         >

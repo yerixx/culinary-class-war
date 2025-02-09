@@ -17,6 +17,7 @@ import {
   ChefsAddressMap,
   ChefsAddress,
   MapIcon,
+  AddressListIcon,
 } from "./Chefs.style";
 import { blackChefs, whiteChefs } from "./ChefsClassData";
 
@@ -99,7 +100,12 @@ const Chefs = () => {
         <Swiper
           className="mySwiper"
           modules={[Pagination, Navigation, Autoplay]}
-          slidesPerView={3}
+          slidesPerView={1.1}
+          breakpoints={{
+            768: {
+              slidesPerView: 3,
+            },
+          }}
           navigation
           spaceBetween={20}
           pagination={{ clickable: true }}
@@ -122,48 +128,54 @@ const Chefs = () => {
                   <ChefsAddressMap>
                     <ChefsAddress>
                       <b>{it.restaurants.restaurantA}</b>
-                      <div>{it.address.addressA}</div>
-                      {it.mapId.mapIdA && (
-                        <MapIcon>
-                          <a
-                            href={`https://place.map.kakao.com/${it.mapId.mapIdA}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <FaMapMarkerAlt />
-                          </a>
-                        </MapIcon>
-                      )}
+                      <AddressListIcon>
+                        <div>{it.address.addressA}</div>
+                        {it.mapId.mapIdA && (
+                          <MapIcon>
+                            <a
+                              href={`https://place.map.kakao.com/${it.mapId.mapIdA}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <FaMapMarkerAlt />
+                            </a>
+                          </MapIcon>
+                        )}
+                      </AddressListIcon>
                     </ChefsAddress>
                     <ChefsAddress>
                       <b>{it.restaurants.restaurantB}</b>
-                      <div>{it.address.addressB}</div>
-                      {it.mapId.mapIdB && (
-                        <MapIcon>
-                          <a
-                            href={`https://place.map.kakao.com/${it.mapId.mapIdB}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <FaMapMarkerAlt />
-                          </a>
-                        </MapIcon>
-                      )}
+                      <AddressListIcon>
+                        <div>{it.address.addressB}</div>
+                        {it.mapId.mapIdB && (
+                          <MapIcon>
+                            <a
+                              href={`https://place.map.kakao.com/${it.mapId.mapIdB}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <FaMapMarkerAlt />
+                            </a>
+                          </MapIcon>
+                        )}
+                      </AddressListIcon>
                     </ChefsAddress>
                     <ChefsAddress>
                       <b>{it.restaurants.restaurantC}</b>
-                      <div>{it.address.addressC}</div>
-                      {it.mapId.mapIdC && (
-                        <MapIcon>
-                          <a
-                            href={`https://place.map.kakao.com/${it.mapId.mapIdC}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <FaMapMarkerAlt />
-                          </a>
-                        </MapIcon>
-                      )}
+                      <AddressListIcon>
+                        <div>{it.address.addressC}</div>
+                        {it.mapId.mapIdC && (
+                          <MapIcon>
+                            <a
+                              href={`https://place.map.kakao.com/${it.mapId.mapIdC}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <FaMapMarkerAlt />
+                            </a>
+                          </MapIcon>
+                        )}
+                      </AddressListIcon>
                     </ChefsAddress>
                   </ChefsAddressMap>
                 </ChefsAddressView>

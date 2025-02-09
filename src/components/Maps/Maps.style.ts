@@ -4,6 +4,9 @@ export const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
   padding: 30px 120px 60px;
+  @media (max-width: 768px) {
+    padding: 30px 20px 60px;
+  }
   #map {
     width: 100%;
     height: 65vh;
@@ -18,7 +21,7 @@ export const Wrapper = styled.section`
   #menu_wrap {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: -990px;
     background: rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 8px;
@@ -28,6 +31,14 @@ export const Wrapper = styled.section`
     height: 80vh;
     max-height: 460px;
     overflow-y: scroll;
+    transition: all 0.3s ease;
+
+    &.activeMenu {
+      right: 10px;
+    }
+    @media (max-width: 768px) {
+      width: 240px;
+    }
     #placesList {
       color: #000;
       display: flex;
@@ -60,6 +71,9 @@ export const AddressTitle = styled.article`
   padding: 8px 0;
   font-size: 38px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 export const AddressSubTitle = styled.article`
   display: flex;
@@ -95,7 +109,34 @@ export const Location = styled.article`
   cursor: pointer;
 `;
 
-export const AddressBottom = styled.section``;
+export const AddressBottom = styled.section`
+  position: relative;
+
+  #menu_button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    top: 50%;
+    right: 0;
+    z-index: 999;
+    font-size: 24px;
+    color: #000;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+
+    &.activeMenu {
+      right: 310px;
+      @media (max-width: 768px) {
+        right: 250px;
+      }
+    }
+  }
+`;
 
 export const Maps = styled.article`
   font-size: 38px;

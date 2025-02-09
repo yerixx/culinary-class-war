@@ -9,8 +9,9 @@ import {
   Wrapper,
 } from "./Maps.style";
 
-import { MdMyLocation } from "react-icons/md";
 import { whiteChefs, blackChefs } from "../Chefs/ChefsClassData";
+import { MdMyLocation } from "react-icons/md";
+import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 
 declare global {
   interface Window {
@@ -40,7 +41,7 @@ const Maps = () => {
   const [map, setMap] = useState<any>(null);
   const [markers, setMarkers] = useState<any[]>([]);
   const [myLocationOverlay, setMyLocationOverlay] = useState<any>(null);
-
+  const [activeButton, setActiveButton] = useState(false);
   const chefsClassData = [...whiteChefs, ...blackChefs];
 
   // 마커 제거 함수
@@ -141,7 +142,6 @@ const Maps = () => {
               <br>${address}
             </div>
           `;
-
           // 리스트 아이템 클릭 이벤트 추가
           listItem.addEventListener("click", () => {
             // 지도 중심을 해당 마커 위치로 이동
@@ -150,6 +150,9 @@ const Maps = () => {
 
             // 해당 마커의 인포윈도우 표시
             infowindow.open(map, marker);
+
+            // menu_wrap 닫기
+            setActiveButton(false);
 
             // 3초 후 인포윈도우 닫기
             setTimeout(() => {
@@ -305,6 +308,10 @@ const Maps = () => {
     }
   }, [map, chefsClassData]);
 
+  const handleMenuButtonClick = () => {
+    setActiveButton((prev) => !prev);
+  };
+
   return (
     <Wrapper>
       <AddressTop>
@@ -331,9 +338,18 @@ const Maps = () => {
       <AddressBottom>
         <div className="map_wrap">
           <div ref={mapRef} id="map"></div>
-          <div id="menu_wrap" className="bg_white">
-            <ul id="placesList"></ul>
-            <div id="pagination"></div>
+          <button
+            id="menu_button"
+            className={activeButton ? "activeMenu" : ""}
+            onClick={handleMenuButtonClick}
+          >
+            {activeButton ? <IoMdArrowDropleft /> : <IoMdArrowDropright />}
+          </button>
+          <div id="menu_wrap" className={activeButton ? "activeMenu" : ""}>
+            <div id="menu_content">
+              <ul id="placesList"></ul>
+              <div id="pagination"></div>
+            </div>
           </div>
         </div>
       </AddressBottom>

@@ -16,12 +16,18 @@ export const SelectView = styled.section`
   padding: 0 120px;
   gap: 10px;
   z-index: 999;
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 export const SelectTitle = styled.article`
   width: 100%;
   font-size: 38px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 export const SelectWrapper = styled.article`
@@ -29,6 +35,9 @@ export const SelectWrapper = styled.article`
   position: absolute;
   top: 125%;
   left: 120px;
+  @media (max-width: 768px) {
+    left: 20px;
+  }
 `;
 
 export const Selected = styled.article`
@@ -40,6 +49,9 @@ export const Selected = styled.article`
   color: #fff;
   border-bottom: 1px solid #fff;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 315px;
+  }
 `;
 export const SelectedOption = styled.ul`
   width: 300px;
@@ -85,6 +97,12 @@ export const SearchInput = styled.input`
   font-size: 14px;
   outline: none;
   color: #fff;
+  @media (max-width: 768px) {
+    top: 70px;
+    right: 0px;
+    left: -10px;
+    width: 315px;
+  }
   &::placeholder {
     opacity: 1;
     transition: all 0.3s;
@@ -100,10 +118,16 @@ export const ChefsView = styled.section`
   display: flex;
   padding-bottom: 0;
   padding: 80px 60px 0px;
+  @media (max-width: 768px) {
+    padding: 150px 0px 0px;
+  }
   .mySwiper {
     width: 100%;
     height: 76vh;
     padding: 0 60px;
+    @media (max-width: 768px) {
+      padding: 0px 20px;
+    }
     .slide {
       width: 100%;
       height: 100%;
@@ -112,6 +136,9 @@ export const ChefsView = styled.section`
       background: rgba(255, 255, 255, 0.1);
       padding: 16px 18px;
       border-radius: 8px;
+      @media (max-width: 768px) {
+        height: 83%;
+      }
     }
     .swiper-button-prev,
     .swiper-button-next {
@@ -187,6 +214,9 @@ export const ChefsAddressView = styled.article`
   height: 120px;
   overflow-y: scroll;
   gap: 16px;
+  @media (max-width: 768px) {
+    height: 140px;
+  }
 `;
 export const ChefsAddressMap = styled.article`
   width: 100%;
@@ -194,13 +224,20 @@ export const ChefsAddressMap = styled.article`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    align-items: start;
+  }
 `;
 
 export const ChefsAddress = styled.article`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    display: block;
+  }
   b {
     flex: 0.7;
     font-size: 14px;
@@ -215,6 +252,14 @@ export const ChefsAddress = styled.article`
   }
 `;
 
+export const AddressListIcon = styled.article`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
 export const MapIcon = styled.article`
   flex: 0.2;
   display: flex;

@@ -7,6 +7,9 @@ export const Wrapper = styled.main`
   height: 100vh;
   padding: 60px 120px;
   margin-bottom: 100px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 export const SwiperView = styled.section`
   display: flex;
@@ -21,8 +24,8 @@ export const SwiperView = styled.section`
       display: flex;
       flex-direction: column;
       padding-right: 32px;
-      &:last-of-type{
-       padding-right: 0px;
+      &:last-of-type {
+        padding-right: 0px;
       }
     }
     .swiper-pagination {
@@ -40,12 +43,14 @@ export const PanelView = styled.section`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
 `;
 
 export const PanelTitle = styled.article`
   font-size: 38px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 export const Text = styled.article`
@@ -62,7 +67,7 @@ export const Text = styled.article`
 export const ImgBox = styled.article`
   position: relative;
   width: 100%;
-  height:100%;
+  height: 100%;
   // height: 600px;
   border-radius: 8px;
   overflow: hidden;
@@ -91,7 +96,7 @@ export const ImgBox = styled.article`
 `;
 export const Img = styled.img`
   width: 100%;
-  height:100%;
+  height: 100%;
   // height: 600px;
   object-position: top;
   margin: 0 auto;
@@ -109,6 +114,9 @@ export const Name = styled.h1`
   font-size: 30px;
   word-wrap: break-word;
   white-space: break-spaces;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 export const Birth = styled.p`
   width: 100%;
@@ -123,5 +131,7 @@ export const Desc = styled.p`
   line-height: 1.6;
   word-wrap: break-word;
   white-space: break-spaces;
-  /* padding: 30px; */
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
