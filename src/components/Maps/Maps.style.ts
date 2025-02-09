@@ -38,7 +38,7 @@ export const Wrapper = styled.section`
     }
     @media (max-width: 768px) {
       width: 240px;
-      height: 50vh;
+      height: 80vh;
     }
     #placesList {
       color: #000;
