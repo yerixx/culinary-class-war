@@ -18,6 +18,7 @@ const Intro = () => {
         ref={videoRef}
         autoPlay={true}
         muted={true}
+        style={{ pointerEvents: "none" }}
       />
     </Wrapper>
   );

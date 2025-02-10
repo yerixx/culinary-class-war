@@ -43,6 +43,7 @@ const Maps = () => {
   const [myLocationOverlay, setMyLocationOverlay] = useState<any>(null);
   const [activeButton, setActiveButton] = useState(false);
   const chefsClassData = [...whiteChefs, ...blackChefs];
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // 마커 제거 함수
   const removeMarkers = () => {
@@ -312,6 +313,15 @@ const Maps = () => {
     setActiveButton((prev) => !prev);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Wrapper>
       <AddressTop>
@@ -338,17 +348,26 @@ const Maps = () => {
       <AddressBottom>
         <div className="map_wrap">
           <div ref={mapRef} id="map"></div>
-          <button
-            id="menu_button"
-            className={activeButton ? "activeMenu" : ""}
-            onClick={handleMenuButtonClick}
+          <div
+            id="wrapA"
+            className={
+              windowWidth >= 768
+                ? activeButton
+                  ? "activeMenu"
+                  : ""
+                : activeButton
+                ? "activeMenu"
+                : ""
+            }
           >
-            {activeButton ? <IoMdArrowDropleft /> : <IoMdArrowDropright />}
-          </button>
-          <div id="menu_wrap" className={activeButton ? "activeMenu" : ""}>
-            <div id="menu_content">
-              <ul id="placesList"></ul>
-              <div id="pagination"></div>
+            <button id="menu_button" onClick={handleMenuButtonClick}>
+              {activeButton ? <IoMdArrowDropleft /> : <IoMdArrowDropright />}
+            </button>
+            <div id="menu_wrap">
+              <div id="menu_content">
+                <ul id="placesList"></ul>
+                <div id="pagination"></div>
+              </div>
             </div>
           </div>
         </div>

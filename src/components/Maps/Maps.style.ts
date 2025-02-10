@@ -7,64 +7,6 @@ export const Wrapper = styled.section`
   @media (max-width: 768px) {
     padding: 30px 20px 60px;
   }
-  #map {
-    width: 100%;
-    height: 65vh;
-    border-radius: 10px;
-    margin-bottom: 10%;
-  }
-  .map_wrap {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  #menu_wrap {
-    position: absolute;
-    top: 10px;
-    right: -990px;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    width: 300px;
-    height: 80vh;
-    max-height: 460px;
-    overflow-y: scroll;
-    transition: all 0.3s ease;
-
-    &.activeMenu {
-      right: 10px;
-    }
-    @media (max-width: 768px) {
-      width: 240px;
-      height: 70vh;
-      max-height: 420px;
-    }
-    #placesList {
-      color: #000;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      div {
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 8px;
-        font-size: 12px;
-        cursor: pointer;
-        transition: all 0.2s;
-
-        &:hover {
-          background: rgba(255, 255, 255, 1);
-          transform: translateY(-2px);
-        }
-
-        strong {
-          font-size: 16px;
-        }
-      }
-    }
-  }
 `;
 export const AddressTop = styled.section``;
 
@@ -120,65 +62,95 @@ export const Location = styled.article`
 
 export const AddressBottom = styled.section`
   position: relative;
-
-  #menu_button {
+  #map {
+    width: 100%;
+    height: 65vh;
+    border-radius: 10px;
+    margin-bottom: 10%;
+  }
+  .map_wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #wrapA {
     position: absolute;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    top: 40%;
-    right: 0;
-    z-index: 999;
-    font-size: 24px;
-    color: #000;
-    background: rgba(0, 0, 0, 0.1);
-    border: none;
+    top: 0;
+    right: 0px;
+    width: 100%;
+    height: 100%;
     transition: all 0.3s ease;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 4px;
-
     &.activeMenu {
-      right: 310px;
+      right: -300px;
       @media (max-width: 768px) {
-        right: 250px;
+        right: -240px;
       }
     }
-  }
-`;
+    #menu_button {
+      position: absolute;
+      top: 30%;
+      right: 300px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      z-index: 999;
+      font-size: 24px;
+      color: #000;
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px 0 0 4px;
+      @media (max-width: 768px) {
+        top: 8%;
 
-export const Maps = styled.article`
-  font-size: 38px;
-  padding-bottom: 30px;
-`;
-
-export const MenuWrap = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 250px;
-  margin: 10px 0 30px 10px;
-  padding: 5px;
-  overflow-y: auto;
-  background: rgba(255, 255, 255, 0.9);
-  z-index: 1;
-  font-size: 12px;
-  border-radius: 10px;
-  li {
-    list-style: none;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 14px;
-      color: #333;
+        right: 240px;
+      }
     }
 
-    p {
-      margin: 3px 0;
-      color: #666;
+    #menu_wrap {
+      position: absolute;
+      top: 5%;
+      right: 0;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      height: 80vh;
+      max-height: 460px;
+      overflow-y: scroll;
+      @media (max-width: 768px) {
+        width: 240px;
+        height: 70vh;
+        max-height: 420px;
+      }
+      #placesList {
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        div {
+          padding: 10px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 8px;
+          font-size: 12px;
+          cursor: pointer;
+          transition: all 0.2s;
+
+          &:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+          }
+
+          strong {
+            font-size: 16px;
+          }
+        }
+      }
     }
   }
 `;
