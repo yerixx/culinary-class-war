@@ -89,7 +89,7 @@ export const AddressBottom = styled.section`
     }
     #menu_button {
       position: absolute;
-      top: 30%;
+      top: 7%;
       right: 300px;
       width: 40px;
       display: flex;
@@ -104,8 +104,6 @@ export const AddressBottom = styled.section`
       padding: 8px;
       border-radius: 4px 0 0 4px;
       @media (max-width: 768px) {
-        top: 8%;
-
         right: 240px;
       }
     }
