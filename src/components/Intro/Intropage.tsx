@@ -19,6 +19,7 @@ const Intro = () => {
         autoPlay={true}
         muted={true}
         style={{ pointerEvents: "none" }}
+        playsInline
       />
     </Wrapper>
   );
