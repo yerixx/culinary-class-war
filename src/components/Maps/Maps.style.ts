@@ -119,7 +119,7 @@ export const AddressBottom = styled.section`
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       width: 300px;
       height: 80vh;
-      max-height: 460px;
+      max-height: 370px;
       overflow-y: scroll;
       @media (max-width: 768px) {
         width: 240px;
